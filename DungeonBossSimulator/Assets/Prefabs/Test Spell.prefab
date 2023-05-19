@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1461463153743929650}
   - component: {fileID: 3681806972109444442}
   - component: {fileID: 8464804088752376532}
+  - component: {fileID: 3748508738252431738}
   m_Layer: 0
   m_Name: Test Spell
   m_TagString: Untagged
@@ -123,3 +124,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3748508738252431738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3281874612376729195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e133e5e622cbb1644a7c23da8b68cd82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20

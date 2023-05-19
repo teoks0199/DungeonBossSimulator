@@ -11,10 +11,11 @@ public class TestProjectile : MonoBehaviour
     {
         if (collision.name != "Player")
         {
-            if (collision.GetComponent<EnemyReceiveDamage>() != null) {
-                collision.GetComponent<EnemyReceiveDamage>().DealDamage(damage);
+            if (collision.GetComponent<Enemy>() != null) 
+            {
+                collision.GetComponent<Enemy>().DealDamage(damage);
             }
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }
