@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     public Slider healthSlider;
     public float health;
     public float maxHealth;
+    public int coins;
 
     void Awake() {
         if(playerStats != null) {
