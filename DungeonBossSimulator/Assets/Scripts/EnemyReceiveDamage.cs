@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     public float health;
     public float maxHealth;
 
+    public GameObject lootDrop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0) {
             Destroy(gameObject);
+            Instantiate(lootDrop, transform.position, Quaternion.identity);
         }
     }
 
