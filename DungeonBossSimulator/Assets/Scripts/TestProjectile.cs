@@ -11,9 +11,9 @@ public class TestProjectile : MonoBehaviour
     {
         if (collision.name != "Player")
         {
-            if (collision.GetComponent<Enemy>() != null) 
+            if (collision.GetComponent<EnemyReceiveDamage>() != null) 
             {
-                collision.GetComponent<Enemy>().DealDamage(damage);
+                collision.GetComponent<EnemyReceiveDamage>().DealDamage(damage);
             }
             Destroy(gameObject);
         }
