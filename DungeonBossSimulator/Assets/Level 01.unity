@@ -1610,8 +1610,8 @@ MonoBehaviour:
   player: {fileID: 678978297}
   healthText: {fileID: 1080035236}
   healthSlider: {fileID: 349132823}
-  health: 0
-  maxHealth: 5
+  health: 10
+  maxHealth: 10
   coins: 0
 --- !u!4 &1268505863
 Transform:

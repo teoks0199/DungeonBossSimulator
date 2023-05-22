@@ -14,6 +14,7 @@ public class StateManager : MonoBehaviour
     {
         if (name != null)
         {
+            //PlayerStats.playerStats.player.SetActive(true);
             SceneManager.LoadScene(name);
         }
     }

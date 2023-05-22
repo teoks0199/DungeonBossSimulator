@@ -28,6 +28,7 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
+        //player.SetActive(true);
         health = maxHealth;
         SetHealthUI();
     }
@@ -67,9 +68,12 @@ public class PlayerStats : MonoBehaviour
 
     private void PlayerDied()
     {
-        LevelManager.instance.GameOver();
         Destroy(player);
-        //gameObject.SetActive(false);
+        //player.SetActive(false);
+        //player.SetActive(false);
+        LevelManager.instance.GameOver();
+        
+        
     }
 
     float CalculateHealthPercentage() {
