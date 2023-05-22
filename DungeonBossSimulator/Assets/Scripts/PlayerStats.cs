@@ -61,8 +61,15 @@ public class PlayerStats : MonoBehaviour
     private void CheckDeath() 
     {
         if (health <= 0) {
-            Destroy(player);
+            PlayerDied();
         }
+    }
+
+    private void PlayerDied()
+    {
+        LevelManager.instance.GameOver();
+        Destroy(player);
+        //gameObject.SetActive(false);
     }
 
     float CalculateHealthPercentage() {
