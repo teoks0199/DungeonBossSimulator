@@ -7,14 +7,25 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     private Vector2 direction;
     private Animator animator;
+    private SpriteRenderer _renderer;
 
     void Start() {
         animator = GetComponent<Animator>();
+        _renderer = GetComponent<SpriteRenderer>();
     }
 
     void Update() {
+            if (Input.GetAxisRaw("Horizontal") > 0)
+    {
+        _renderer.flipX = true;
+    }
+    else if (Input.GetAxisRaw("Horizontal") < 0)
+    {
+        _renderer.flipX = false;
+    }   
     TakeInput();
     Move();
+    
 }
 
     private void Move()
@@ -47,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
 
     private void SetAnimatorMovement(Vector2 direction) {
         animator.SetLayerWeight(1,1);
