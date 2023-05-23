@@ -11,10 +11,4 @@ public class EnemyAttack : MonoBehaviour
         //StartCoroutine(ShootPlayer());
         player = FindObjectOfType<PlayerMovement>().gameObject;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

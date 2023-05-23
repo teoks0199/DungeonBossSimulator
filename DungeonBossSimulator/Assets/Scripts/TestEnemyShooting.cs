@@ -11,7 +11,7 @@ public class TestEnemyShooting : MonoBehaviour
     public float projectileForce;
     public float cooldown;
 
-    void Start()
+    public void Start()
     {
         StartCoroutine(ShootPlayer());
         player = FindObjectOfType<PlayerMovement>().gameObject;

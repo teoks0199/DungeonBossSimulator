@@ -16,7 +16,10 @@ public class PlayerStats : MonoBehaviour
     public float maxHealth;
     public int coins;
 
+    private Rigidbody2D rb;
+
     void Awake() {
+        //health = maxHealth;
         if(playerStats != null) {
             Destroy(playerStats);
         }
@@ -28,6 +31,9 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
+        rb = GetComponent<Rigidbody2D>();
+        //health = 4;
         //player.SetActive(true);
         health = maxHealth;
         SetHealthUI();
@@ -36,8 +42,10 @@ public class PlayerStats : MonoBehaviour
     public void DealDamage(float damage) 
     {
         health -= damage;
-        CheckDeath();
+        //Debug.Log(damage);
         SetHealthUI();
+        CheckDeath();
+        
     }
 
     public void HealCharacter(float heal) {
@@ -61,19 +69,22 @@ public class PlayerStats : MonoBehaviour
 
     private void CheckDeath() 
     {
+        Debug.Log(health);
         if (health <= 0) {
+            //Debug.Log(health);
             PlayerDied();
         }
     }
 
     private void PlayerDied()
     {
-        Destroy(player);
+        //Debug.Log("died");
+        //Destroy(player);
         //player.SetActive(false);
-        //player.SetActive(false);
+        Time.timeScale = 0;
+
         LevelManager.instance.GameOver();
-        
-        
+        //gameObject.SetActive(false);
     }
 
     float CalculateHealthPercentage() {
