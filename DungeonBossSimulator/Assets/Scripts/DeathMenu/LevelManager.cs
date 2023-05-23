@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
+    [SerializeField] public float enemyCount;
 
     private void Awake()
     {
@@ -20,4 +21,14 @@ public class LevelManager : MonoBehaviour
             _ui.ToggleDeathPanel();
         }
     }
+
+    public void NextLevel()
+    {
+        UIManager _ui = GetComponent<UIManager>();
+        if (_ui != null) 
+        {
+            _ui.ToggleNextLevelPanel();
+        }
+    }
+
 }
