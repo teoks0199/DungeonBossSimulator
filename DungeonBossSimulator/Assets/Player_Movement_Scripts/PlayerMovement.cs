@@ -34,10 +34,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (direction.x != 0 || direction.y != 0) {
             SetAnimatorMovement(direction);
+            animator.SetBool("isMoving", true);
         }
 
         else {
-            animator.SetLayerWeight(1, 0);
+            animator.SetBool("isMoving", false);
         }
     }
 

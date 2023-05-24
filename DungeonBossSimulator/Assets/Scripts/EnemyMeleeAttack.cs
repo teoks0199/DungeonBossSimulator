@@ -12,6 +12,7 @@ public class EnemyMeleeAttack : MonoBehaviour
     public float maxDamage;
     public float projectileForce;
     public float cooldown;
+    private SpriteRenderer _renderer;
 
     private Rigidbody2D rb;
     public void Start()
@@ -19,18 +20,27 @@ public class EnemyMeleeAttack : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //StartCoroutine(ShootPlayer());
         player = FindObjectOfType<PlayerMovement>().gameObject;
+        _renderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
+
         //distance = Vector2.Distance(transform.position, player.transform.position);
-        Vector2 direction = player.transform.position - transform.position;
+        //Vector2 direction = player.transform.position - transform.position;
         //direction.Normalize();
         //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
         transform.position = Vector2.MoveTowards(this.transform.position, 
         player.transform.position, speed * Time.deltaTime);
-        //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+        //transform.rotation = Quaternion.Euler(Vector3.forward * angle)
+        if (this.transform.position.x < player.transform.position.x)
+    {
+        _renderer.flipX = false;
+    }
+        else if (this.transform.position.x > player.transform.position.x)
+    {
+        _renderer.flipX = true;
+    }  
         
     }
 
@@ -50,7 +60,7 @@ public class EnemyMeleeAttack : MonoBehaviour
 
     public IEnumerator Knockback()
     {
-        float knockbackDuration = 0.01f;
+        float knockbackDuration = 0.1f;
         //float knockbackPower = 0.0005f;
         //float knockbackPower = 0.4f;
         Transform obj = PlayerStats.playerStats.player.transform;
