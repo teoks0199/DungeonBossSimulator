@@ -13,13 +13,13 @@ public class PlayerStats : MonoBehaviour
     public TMP_Text healthText;
     public Slider healthSlider;
     public float health;
-    public float maxHealth;
+    private float maxHealth = 100;
     public int coins;
 
     private Rigidbody2D rb;
 
-    void Awake() {
-        //health = maxHealth;
+    void Awake() 
+    {
         if(playerStats != null) {
             Destroy(playerStats);
         }
@@ -27,6 +27,7 @@ public class PlayerStats : MonoBehaviour
             playerStats = this;
         }
         DontDestroyOnLoad(this);
+        health = maxHealth;
     }
 
     void Start()
@@ -35,7 +36,7 @@ public class PlayerStats : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //health = 4;
         //player.SetActive(true);
-        health = maxHealth;
+        
         SetHealthUI();
     }
 
@@ -94,6 +95,6 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //SetHealthUI();
     }
 }

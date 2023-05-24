@@ -634,9 +634,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2378431864020340916, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+    - target: {fileID: 1523319805, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
+      propertyPath: maxDamage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523319805, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
+      propertyPath: minDamage
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2743130650215018097, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
       propertyPath: m_RootOrder
@@ -682,17 +686,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2743130650215018099, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2743130650215018099, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2743130650215018110, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743130650215018110, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
@@ -32348,6 +32348,10 @@ PrefabInstance:
       propertyPath: nextLevelPanel
       value: 
       objectReference: {fileID: 223744940}
+    - target: {fileID: 1465869359859529860, guid: fd2f05276adc37f46870fddcef40bba4, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 1979596893}
     - target: {fileID: 1465869359859529861, guid: fd2f05276adc37f46870fddcef40bba4, type: 3}
       propertyPath: m_RootOrder
       value: 10
