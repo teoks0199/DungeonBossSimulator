@@ -60,7 +60,7 @@ public class EnemyMeleeAttack : MonoBehaviour
 
     public IEnumerator Knockback()
     {
-        float knockbackDuration = 0.1f;
+        float knockbackDuration = 0.01f;
         //float knockbackPower = 0.0005f;
         //float knockbackPower = 0.4f;
         Transform obj = PlayerStats.playerStats.player.transform;
