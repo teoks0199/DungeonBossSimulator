@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime);
 
         if (direction.x != 0 || direction.y != 0) {
-            SetAnimatorMovement(direction);
             animator.SetBool("isMoving", true);
         }
 
@@ -59,13 +58,4 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-
-
-    private void SetAnimatorMovement(Vector2 direction) {
-        animator.SetLayerWeight(1,1);
-        animator.SetFloat("xDir", direction.x);
-        animator.SetFloat("yDir", direction.y);
-    }
-
-
 }
