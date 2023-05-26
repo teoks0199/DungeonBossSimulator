@@ -69,7 +69,7 @@ public class PlayerStats : MonoBehaviour
 
     private void CheckDeath() 
     {
-        Debug.Log(health);
+        // Debug.Log(health);
         if (health <= 0) {
             //Debug.Log(health);
             PlayerDied();

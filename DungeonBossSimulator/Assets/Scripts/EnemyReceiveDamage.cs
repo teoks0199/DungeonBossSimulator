@@ -11,13 +11,12 @@ public class EnemyReceiveDamage : MonoBehaviour
     public Slider healthBarSlider;
     public GameObject lootDrop;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         health = maxHealth;
     }
 
-    public void DealDamage(float damage) 
+    public void DealDamage(float damage)
     {
         healthBar.SetActive(true);
         health -= damage;
@@ -25,39 +24,48 @@ public class EnemyReceiveDamage : MonoBehaviour
         healthBarSlider.value = CalculateHealthPercentage();
     }
 
-    public void HealCharacter(float heal) {
+    public void HealCharacter(float heal)
+    {
         health += heal;
         CheckOverheal();
         healthBarSlider.value = CalculateHealthPercentage();
     }
 
-    private void CheckOverheal() 
+    private void CheckOverheal()
     {
-        if (health > maxHealth) {
+        if (health > maxHealth)
+        {
             health = maxHealth;
         }
     }
 
-    private void CheckDeath() 
+    private void CheckDeath()
     {
-        if (health <= 0) {
-            Destroy(gameObject);
-            Instantiate(lootDrop, transform.position, Quaternion.identity);
-            LevelManager.instance.enemyCount -= 1;
-            if (LevelManager.instance.enemyCount <= 0)
-            {
-                LevelManager.instance.NextLevel();
-            }
+        if (health <= 0)
+        {
+            Die();
         }
     }
 
-    private float CalculateHealthPercentage() {
-        return (health / maxHealth);
+    private void Die()
+    {
+        Destroy(gameObject);
+        Instantiate(lootDrop, transform.position, Quaternion.identity);
+        LevelManager.instance.enemyCount--;
+        if (LevelManager.instance.enemyCount <= 0)
+        {
+            LevelManager.instance.NextLevel();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private float CalculateHealthPercentage()
     {
-        
+        return health / maxHealth;
+    }
+
+    private void Update()
+    {
+
     }
 }
+

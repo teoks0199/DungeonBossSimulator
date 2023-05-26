@@ -54,7 +54,6 @@ public class EnemyMeleeAttack : MonoBehaviour
             if(collision.tag == "Player")
             {
                 PlayerStats.playerStats.DealDamage(Random.Range(minDamage, maxDamage));
-                animator.SetBool("Collided", true);
                 StartCoroutine(Knockback());
                 //Vector2 difference = transform.position - collision.transform.position;
                 //transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);

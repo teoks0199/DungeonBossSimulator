@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7637495731916439776}
   - component: {fileID: 2790307296947776007}
   - component: {fileID: 8616805648295879431}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 7609532105208315775}
   - component: {fileID: 2420448436147115426}
   - component: {fileID: 7781052201611507463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: -134313208318108513}
   - component: {fileID: -266611191167421367}
   - component: {fileID: 5789131800960424024}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Melee Knight
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1201720177019477611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7612757231833841425}
   - component: {fileID: 8860214613253455807}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Health Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 3849017462191663489}
   - component: {fileID: 4131886544695382218}
   - component: {fileID: 5972783775436719438}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Health UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 994410885170179807}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}

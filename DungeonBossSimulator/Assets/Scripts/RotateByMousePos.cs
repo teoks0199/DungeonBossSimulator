@@ -22,7 +22,7 @@ using UnityEngine;
          if (Time.frameCount % _interval == 0)
          {
              // Use debug to learn mouse position, you can disable this if you want.
-             Debug.Log(Input.mousePosition);
+            //  Debug.Log(Input.mousePosition);
 
              // Mouse on Top Right screen
              _bullet.localEulerAngles = Vector3.zero;
