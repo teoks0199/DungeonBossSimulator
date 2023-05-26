@@ -12,12 +12,15 @@ public class EnemyMeleeAttack : MonoBehaviour
     public float maxDamage;
     public float projectileForce;
     public float cooldown;
+
+    private Animator animator;
     private SpriteRenderer _renderer;
 
     private Rigidbody2D rb;
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         //StartCoroutine(ShootPlayer());
         player = FindObjectOfType<PlayerMovement>().gameObject;
         _renderer = GetComponent<SpriteRenderer>();
@@ -51,6 +54,7 @@ public class EnemyMeleeAttack : MonoBehaviour
             if(collision.tag == "Player")
             {
                 PlayerStats.playerStats.DealDamage(Random.Range(minDamage, maxDamage));
+                animator.SetBool("Collided", true);
                 StartCoroutine(Knockback());
                 //Vector2 difference = transform.position - collision.transform.position;
                 //transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
@@ -60,6 +64,7 @@ public class EnemyMeleeAttack : MonoBehaviour
 
     public IEnumerator Knockback()
     {
+        //animator.SetBool("Collided", false);
         float knockbackDuration = 0.01f;
         //float knockbackPower = 0.0005f;
         //float knockbackPower = 0.4f;
