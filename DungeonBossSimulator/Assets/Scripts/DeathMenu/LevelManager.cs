@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
     [SerializeField] public float enemyCount;
+    [SerializeField] public GameObject playerPrefab;
 
     private void Awake()
     {

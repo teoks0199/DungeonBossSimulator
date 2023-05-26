@@ -51,14 +51,14 @@ public class EnemyMeleeAttack : MonoBehaviour
             if(collision.tag == "Player")
             {
                 PlayerStats.playerStats.DealDamage(Random.Range(minDamage, maxDamage));
-                StartCoroutine(Knockback());
-                //Vector2 difference = transform.position - collision.transform.position;
-                //transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
+                //StartCoroutine(Knockback());
+                Vector2 difference = transform.position - collision.transform.position;
+                transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
             }
         }
     }
 
-    public IEnumerator Knockback()
+    /*public IEnumerator Knockback()
     {
         float knockbackDuration = 0.01f;
         //float knockbackPower = 0.0005f;
@@ -73,7 +73,7 @@ public class EnemyMeleeAttack : MonoBehaviour
             transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
         }
         yield return 0;
-    }
+    }*/
 
     /*IEnumerator ShootPlayer() {
             yield return new WaitForSeconds(cooldown);
