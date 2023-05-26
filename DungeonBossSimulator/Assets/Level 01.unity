@@ -191,6 +191,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &33541185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7210683774338101114, guid: 88fa5817b3ad33744b23d35e750cd978, type: 3}
+  m_PrefabInstance: {fileID: 7210683772969598991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &108667495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32469,6 +32474,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2743130650215018110, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
+    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
+      propertyPath: HealthUI
+      value: 
+      objectReference: {fileID: 33541185}
     - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
       propertyPath: maxHealth
       value: 100

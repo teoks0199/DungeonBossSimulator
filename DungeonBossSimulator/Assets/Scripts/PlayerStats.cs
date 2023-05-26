@@ -11,13 +11,14 @@ public class PlayerStats : MonoBehaviour
     public static PlayerStats playerStats;
 
     public GameObject player;
+
+    //public GameObject HealthUI;
     public TMP_Text healthText;
     public Slider healthSlider;
     public float health;
     private float maxHealth = 99;
     public int coins;
 
-    private Rigidbody2D rb;
     public GameObject playerModel;
 
     void Awake() 
@@ -38,10 +39,6 @@ public class PlayerStats : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Level 01") {
             playerModel = Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
         }
-        //Time.timeScale = 1;
-        rb = GetComponent<Rigidbody2D>();
-        //health = 4;
-        //player.SetActive(true);
         
         SetHealthUI();
     }
@@ -82,7 +79,7 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void PlayerDied()
+    private void PlayerDied()
     {
         var temp = this;
         playerStats = new PlayerStats();
