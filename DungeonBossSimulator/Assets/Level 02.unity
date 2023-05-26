@@ -31572,6 +31572,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7943522114170521216, guid: 7045e7154001de84693fc50a46bee4f7, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7045e7154001de84693fc50a46bee4f7, type: 3}
 --- !u!1 &225389018 stripped
@@ -32339,7 +32343,7 @@ PrefabInstance:
     - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 225389018}
+      objectReference: {fileID: 2743130650215018110, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
     - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
       propertyPath: maxHealth
       value: 100

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -13,10 +14,11 @@ public class PlayerStats : MonoBehaviour
     public TMP_Text healthText;
     public Slider healthSlider;
     public float health;
-    private float maxHealth = 100;
+    private float maxHealth = 99;
     public int coins;
 
     private Rigidbody2D rb;
+    public GameObject playerModel;
 
     void Awake() 
     {
@@ -26,13 +28,17 @@ public class PlayerStats : MonoBehaviour
         else {
             playerStats = this;
         }
+        //playerModel = Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
         DontDestroyOnLoad(this);
         health = maxHealth;
     }
 
     void Start()
     {
-        Time.timeScale = 1;
+        if (SceneManager.GetActiveScene().name == "Level 01") {
+            playerModel = Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
+        }
+        //Time.timeScale = 1;
         rb = GetComponent<Rigidbody2D>();
         //health = 4;
         //player.SetActive(true);
@@ -72,20 +78,17 @@ public class PlayerStats : MonoBehaviour
     {
         Debug.Log(health);
         if (health <= 0) {
-            //Debug.Log(health);
             PlayerDied();
         }
     }
 
-    private void PlayerDied()
+    public void PlayerDied()
     {
-        //Debug.Log("died");
-        //Destroy(player);
-        //player.SetActive(false);
-        Time.timeScale = 0;
-
+        var temp = this;
+        playerStats = new PlayerStats();
+        Destroy(temp.playerModel);
+        Destroy(temp);
         LevelManager.instance.GameOver();
-        //gameObject.SetActive(false);
     }
 
     float CalculateHealthPercentage() {
