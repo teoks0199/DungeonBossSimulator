@@ -14,7 +14,11 @@ public class TestEnemyShooting : MonoBehaviour
     public void Start()
     {
         StartCoroutine(ShootPlayer());
-        player = FindObjectOfType<PlayerMovement>().gameObject;
+        //player = PlayerStats.playerStats.playerModel;
+    }
+
+    void Update() {
+        player = PlayerStats.playerStats.playerModel;
     }
 
     IEnumerator ShootPlayer() {

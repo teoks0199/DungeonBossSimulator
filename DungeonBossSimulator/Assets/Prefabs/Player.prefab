@@ -137,8 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 3281874612376729195, guid: 251c03a55c37e574da49db65f4e6a8ee, type: 3}
-  minDamage: 30
-  maxDamage: 50
+  minDamage: 5
+  maxDamage: 10
   projectileForce: 2
 --- !u!50 &628195766
 Rigidbody2D:

@@ -19,7 +19,8 @@ public class EnemyMeleeAttack : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         //StartCoroutine(ShootPlayer());
-        player = FindObjectOfType<PlayerMovement>().gameObject;
+        // player = FindObjectOfType<PlayerMovement>().gameObject;
+        //player = PlayerStats.playerStats.playerModel;
         _renderer = GetComponent<SpriteRenderer>();
     }
 
@@ -30,6 +31,7 @@ public class EnemyMeleeAttack : MonoBehaviour
         //Vector2 direction = player.transform.position - transform.position;
         //direction.Normalize();
         //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        player = PlayerStats.playerStats.playerModel;
         transform.position = Vector2.MoveTowards(this.transform.position, 
         player.transform.position, speed * Time.deltaTime);
         //transform.rotation = Quaternion.Euler(Vector3.forward * angle)

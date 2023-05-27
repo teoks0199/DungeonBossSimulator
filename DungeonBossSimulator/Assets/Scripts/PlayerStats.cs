@@ -16,7 +16,7 @@ public class PlayerStats : MonoBehaviour
     public TMP_Text healthText;
     public Slider healthSlider;
     public float health;
-    private float maxHealth = 99;
+    private float maxHealth = 999;
     public int coins;
 
     public GameObject playerModel;
