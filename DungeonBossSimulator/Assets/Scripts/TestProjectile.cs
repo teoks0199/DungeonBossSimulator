@@ -15,7 +15,11 @@ public class TestProjectile : MonoBehaviour
             {
                 collision.GetComponent<EnemyReceiveDamage>().DealDamage(damage);
             }
-            Destroy(gameObject);
+            if (collision.tag != "Loot")
+            {
+                Destroy(gameObject);
+            }
+            
         }
     }
 }
