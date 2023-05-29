@@ -12,6 +12,7 @@ public class TestEnemyShooting : MonoBehaviour
     public float cooldown;
     private SpriteRenderer _renderer;
     private Animator animator;
+    public bool isDead = false;
 
     public void Start()
     {
@@ -22,8 +23,15 @@ public class TestEnemyShooting : MonoBehaviour
     }
 
     void Update() {
-        player = PlayerStats.playerStats.playerModel;
-        animator.SetBool("Attack", false);
+        if (!isDead)
+        {
+            player = PlayerStats.playerStats.playerModel;
+            animator.SetBool("Attack", false);
+        } 
+        else
+        {
+            GetComponent<BoxCollider2D> ().enabled = false;
+        }  
     }
 
     IEnumerator ShootPlayer() {

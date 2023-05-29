@@ -49,6 +49,21 @@ public class EnemyReceiveDamage : MonoBehaviour
 
     private IEnumerator DestroyWithDelay()
     {
+        //gameObject.EnemyMeleeAttack.player = null;
+        EnemyMeleeAttack enemMelee = GetComponent<EnemyMeleeAttack>();
+        if (enemMelee != null)
+        {
+            enemMelee.isDead = true;
+        }
+
+        TestEnemyShooting wizard = GetComponent<TestEnemyShooting>();
+        if (wizard != null)
+        {
+            wizard.isDead = true;
+        }
+  
+        
+        
         animator.SetBool("Dead", true);
         yield return new WaitForSeconds(1.0f); // Adjust the delay time as needed
         Destroy(gameObject);

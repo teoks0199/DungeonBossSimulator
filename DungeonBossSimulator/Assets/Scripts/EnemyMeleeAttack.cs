@@ -7,12 +7,14 @@ public class EnemyMeleeAttack : MonoBehaviour
     public GameObject player;
     public GameObject projectile;
     public float speed;
-    //private float distance;
+    private float distance;
     public float minDamage;
     public float maxDamage;
     public float projectileForce;
     public float cooldown;
+    public bool isDead = false;
     private SpriteRenderer _renderer;
+    //private BoxCollider2D collider;
 
     private Rigidbody2D rb;
     public void Start()
@@ -26,23 +28,31 @@ public class EnemyMeleeAttack : MonoBehaviour
 
     void Update()
     {
-
-        //distance = Vector2.Distance(transform.position, player.transform.position);
-        //Vector2 direction = player.transform.position - transform.position;
-        //direction.Normalize();
-        //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        player = PlayerStats.playerStats.playerModel;
-        transform.position = Vector2.MoveTowards(this.transform.position, 
-        player.transform.position, speed * Time.deltaTime);
-        //transform.rotation = Quaternion.Euler(Vector3.forward * angle)
+        
+        if (!isDead)
+        {
+            //distance = Vector2.Distance(transform.position, player.transform.position);
+            //Vector2 direction = player.transform.position - transform.position;
+            //direction.Normalize();
+            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            player = PlayerStats.playerStats.playerModel;
+            transform.position = Vector2.MoveTowards(this.transform.position, 
+            player.transform.position, speed * Time.deltaTime);
+            //transform.rotation = Quaternion.Euler(Vector3.forward * angle)
+        } 
+        else
+        {
+            GetComponent<BoxCollider2D> ().enabled = false;
+        }
+        
         if (this.transform.position.x < player.transform.position.x)
-    {
-        _renderer.flipX = false;
-    }
+        {
+            _renderer.flipX = false;
+        }
         else if (this.transform.position.x > player.transform.position.x)
-    {
-        _renderer.flipX = true;
-    }  
+        {
+            _renderer.flipX = true;
+        }  
         
     }
 
