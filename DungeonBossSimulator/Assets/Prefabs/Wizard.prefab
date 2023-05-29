@@ -538,7 +538,8 @@ MonoBehaviour:
   minDamage: 10
   maxDamage: 20
   projectileForce: 2
-  cooldown: 3
+  cooldown: 2
+  isDead: 0
 --- !u!114 &564504714721985694
 MonoBehaviour:
   m_ObjectHideFlags: 0

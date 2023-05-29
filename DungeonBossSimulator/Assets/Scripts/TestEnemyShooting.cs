@@ -37,6 +37,8 @@ public class TestEnemyShooting : MonoBehaviour
     IEnumerator ShootPlayer() {
             yield return new WaitForSeconds(cooldown);
             if (player!=null) {
+                animator.SetBool("Attack", true);
+                yield return new WaitForSeconds(0.45f);
                 GameObject spell = Instantiate(projectile, transform.position, Quaternion.identity);
                 Debug.Log(player.transform.position);
                 Vector2 myPos = transform.position;
@@ -48,7 +50,7 @@ public class TestEnemyShooting : MonoBehaviour
                 _renderer.flipX = true; }
                 spell.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
                 spell.GetComponent<TestEnemyProjectile>().damage = Random.Range(minDamage, maxDamage);
-                animator.SetBool("Attack", true);
+                // animator.SetBool("Attack", true);
                 StartCoroutine(ShootPlayer());
             }
     }
