@@ -12,8 +12,13 @@ public class TestEnemyProjectile : MonoBehaviour
         {
             if(collision.tag == "Player")
             {
+                if(PlayerMovement.animator.GetCurrentAnimatorStateInfo(0).IsName("Hit")) {
+                    PlayerStats.playerStats.DealDamage(damage);
+                }
+                else {
                 PlayerMovement.animator.SetTrigger("Hit");
-                PlayerStats.playerStats.DealDamage(damage);
+                PlayerStats.playerStats.DealDamage(damage);                    
+                }
             }
             if (collision.tag != "Loot")
             {
