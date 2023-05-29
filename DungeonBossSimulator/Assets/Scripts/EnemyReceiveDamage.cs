@@ -10,11 +10,13 @@ public class EnemyReceiveDamage : MonoBehaviour
     public GameObject healthBar;
     public Slider healthBarSlider;
     public GameObject lootDrop;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
+        animator = GetComponent<Animator>();
     }
 
     public void DealDamage(float damage) 
@@ -41,13 +43,20 @@ public class EnemyReceiveDamage : MonoBehaviour
     private void CheckDeath() 
     {
         if (health <= 0) {
-            Destroy(gameObject);
-            Instantiate(lootDrop, transform.position, Quaternion.identity);
-            LevelManager.instance.enemyCount -= 1;
-            if (LevelManager.instance.enemyCount <= 0)
-            {
-                LevelManager.instance.NextLevel();
-            }
+            StartCoroutine(DestroyWithDelay());
+        }
+    }
+
+    private IEnumerator DestroyWithDelay()
+    {
+        animator.SetBool("Dead", true);
+        yield return new WaitForSeconds(1.0f); // Adjust the delay time as needed
+        Destroy(gameObject);
+        Instantiate(lootDrop, transform.position, Quaternion.identity);
+        LevelManager.instance.enemyCount -= 1;
+        if (LevelManager.instance.enemyCount <= 0)
+        {
+            LevelManager.instance.NextLevel();
         }
     }
 
@@ -58,6 +67,7 @@ public class EnemyReceiveDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
+

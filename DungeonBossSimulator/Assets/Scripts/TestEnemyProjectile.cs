@@ -12,6 +12,7 @@ public class TestEnemyProjectile : MonoBehaviour
         {
             if(collision.tag == "Player")
             {
+                PlayerMovement.animator.SetTrigger("Hit");
                 PlayerStats.playerStats.DealDamage(damage);
             }
             if (collision.tag != "Loot")

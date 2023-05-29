@@ -112,8 +112,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.811, y: 0.46}
-  m_SizeDelta: {x: 180, y: 45}
+  m_AnchoredPosition: {x: 0.84, y: 0.5}
+  m_SizeDelta: {x: 800, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &382752977
 MonoBehaviour:
@@ -200,8 +200,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1256416722
 GameObject:
@@ -240,7 +240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.74, y: -0.28}
+  m_AnchoredPosition: {x: -0.74, y: 0.1}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1256416726
@@ -340,7 +340,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1901943523
 CanvasRenderer:
@@ -392,8 +392,8 @@ GameObject:
   - component: {fileID: 6055571648096985238}
   - component: {fileID: 6055571648096985233}
   - component: {fileID: 6055571648096985232}
-  - component: {fileID: -7083826282123802005}
-  - component: {fileID: 1225256117}
+  - component: {fileID: 1653051326889087231}
+  - component: {fileID: 564504714721985694}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Enemy
@@ -410,7 +410,7 @@ RectTransform:
   m_GameObject: {fileID: 6055571648096985245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1256416723}
@@ -435,18 +435,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0061447322, y: -0.04383084}
+  m_Offset: {x: 0.04185854, y: -0.022829413}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.28}
+    oldSize: {x: 0.57, y: 0.86}
     newSize: {x: 0.14, y: 0.21}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.11409587, y: 0.18070906}
+  m_Size: {x: 0.28210694, y: 0.8107501}
   m_EdgeRadius: 0
 --- !u!95 &6055571648096985233
 Animator:
@@ -510,7 +510,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 710e63f4881f9cd4f9b5722d6e59a0a9, type: 3}
+  m_Sprite: {fileID: 190124578, guid: 428221e62c3cdcf48a9837adf85fddd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -521,7 +521,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-7083826282123802005
+--- !u!114 &1653051326889087231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -533,13 +533,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc3e93c36347c0408dcfd690b974728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2743130650215018097, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
   projectile: {fileID: 3281874612376729195, guid: 61cf6843ec019be48beb9a23a8ab329a, type: 3}
-  minDamage: 3
-  maxDamage: 3
+  player: {fileID: 0}
+  minDamage: 10
+  maxDamage: 20
   projectileForce: 2
-  cooldown: 1
---- !u!114 &1225256117
+  cooldown: 3
+--- !u!114 &564504714721985694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -552,7 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 50
+  maxHealth: 80
   healthBar: {fileID: 382752975}
   healthBarSlider: {fileID: 382752977}
   lootDrop: {fileID: 8862175120893293825, guid: 9443372692b56bc4ead6205a72754fcb, type: 3}
