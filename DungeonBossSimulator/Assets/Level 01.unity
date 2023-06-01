@@ -32440,6 +32440,10 @@ PrefabInstance:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 349132823}
+    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
+      propertyPath: impactAttack
+      value: 
+      objectReference: {fileID: 7926163667032392743, guid: ab3af1755ac0231459570939abdeede2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 788966e820856324fb44386f96064533, type: 3}
 --- !u!1001 &5777584767089335418

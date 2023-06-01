@@ -140,6 +140,7 @@ MonoBehaviour:
   minDamage: 5
   maxDamage: 10
   projectileForce: 2
+  cooldownDuration: 0.3
 --- !u!50 &628195766
 Rigidbody2D:
   serializedVersion: 4
