@@ -14,13 +14,18 @@ public class PlayerStats : MonoBehaviour
     public TMP_Text healthText;
     public Slider healthSlider;
     public float health;
-    private float maxHealth = 999;
+    public float maxHealth = 999;
     public int coins;
     public GameObject impactAttack;
     public GameObject playerModel;
 
+    public Dictionary<string, Upgrade> upgradePool = new Dictionary<string, Upgrade>();
+    
+
     void Awake()
     {
+        
+       
         if (playerStats != null)
         {
             Destroy(playerStats);
@@ -32,6 +37,8 @@ public class PlayerStats : MonoBehaviour
         // playerModel = Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
         DontDestroyOnLoad(this);
         health = maxHealth;
+
+        upgradePool.Add("IncreaseMaxHealth", new IncreaseHealthUpgrade());
     }
 
     void Start()

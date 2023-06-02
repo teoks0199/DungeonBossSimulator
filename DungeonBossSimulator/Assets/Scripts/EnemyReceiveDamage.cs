@@ -64,7 +64,7 @@ public class EnemyReceiveDamage : MonoBehaviour
   
         
         
-        animator.SetBool("Dead", true);
+        animator.SetBool("Dead", true); 
         yield return new WaitForSeconds(1.0f); // Adjust the delay time as needed
         Destroy(gameObject);
         Instantiate(lootDrop, transform.position, Quaternion.identity);
