@@ -15,16 +15,11 @@ public class ImpactAttackScript : MonoBehaviour
 
     IEnumerator PlayImpactAnimationAndDespawn()
     {
-        // Play the impact animation
         if (animator != null)
         {
             animator.SetTrigger("Impact");
         }
-
-        // Wait for the impact animation to finish
         yield return new WaitForSeconds(despawnDelay);
-
-        // Destroy the impact attack object
         Destroy(gameObject);
     }
 

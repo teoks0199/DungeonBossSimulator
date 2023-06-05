@@ -35,12 +35,9 @@ public class TestSpell : MonoBehaviour
             Vector2 myPos = transform.position;
             Vector2 direction = (mousePos - myPos).normalized;
             spell.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
-
             // Random damage
             spell.GetComponent<TestProjectile>().damage = Random.Range(minDamage, maxDamage);
-
             lastFireTime = Time.time; // Update the last fire time
-
             yield return new WaitForSeconds(cooldownDuration);
         }
     }

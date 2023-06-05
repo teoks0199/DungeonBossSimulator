@@ -10,7 +10,6 @@ public class PlayerStats : MonoBehaviour
     public static PlayerStats playerStats;
 
     public GameObject player;
-    // public GameObject HealthUI;
     public TMP_Text healthText;
     public Slider healthSlider;
     public float health;
@@ -24,8 +23,7 @@ public class PlayerStats : MonoBehaviour
 
     void Awake()
     {
-        
-       
+
         if (playerStats != null)
         {
             Destroy(playerStats);
@@ -34,7 +32,6 @@ public class PlayerStats : MonoBehaviour
         {
             playerStats = this;
         }
-        // playerModel = Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
         DontDestroyOnLoad(this);
         health = maxHealth;
 
@@ -46,8 +43,6 @@ public class PlayerStats : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Level 01")
         {
             playerModel = Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
-            // impactAttack = Instantiate(impactAttack, new Vector3(0, -0.3f, 0), Quaternion.identity);
-            // impactAttack.transform.SetParent(playerModel.transform);
         }
 
         SetHealthUI();
@@ -105,28 +100,5 @@ public class PlayerStats : MonoBehaviour
         return (health / maxHealth);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            TriggerImpactAttack();
-        }
-    }
-
-    void TriggerImpactAttack()
-    {
-        if (impactAttack != null)
-        {
-            // Instantiate the impact attack at the desired position relative to the player
-            GameObject impact = Instantiate(impactAttack, playerModel.transform.position + new Vector3(0, -0.2f, 0), Quaternion.identity);
-            // Optionally, you can parent the impact attack to the player for better organization
-            impact.transform.SetParent(playerModel.transform);
-
-            // Add a script to the impact attack object to handle despawning after the attack occurs
-            ImpactAttackScript attackScript = impact.AddComponent<ImpactAttackScript>();
-            attackScript.InitializeDespawn(); // Call a method to initialize the despawn process
-        }
-    }
 }
 

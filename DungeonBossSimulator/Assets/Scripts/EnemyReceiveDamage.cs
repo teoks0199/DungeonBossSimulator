@@ -11,6 +11,7 @@ public class EnemyReceiveDamage : MonoBehaviour
     public Slider healthBarSlider;
     public GameObject lootDrop;
     private Animator animator;
+    private bool isDestroyed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,49 +41,48 @@ public class EnemyReceiveDamage : MonoBehaviour
         }
     }
 
-    private void CheckDeath() 
+    private void CheckDeath()
     {
-        if (health <= 0) {
+        if (health <= 0 && !isDestroyed) {
             StartCoroutine(DestroyWithDelay());
         }
     }
 
     private IEnumerator DestroyWithDelay()
     {
-        //gameObject.EnemyMeleeAttack.player = null;
-        EnemyMeleeAttack enemMelee = GetComponent<EnemyMeleeAttack>();
-        if (enemMelee != null)
-        {
-            enemMelee.isDead = true;
-        }
-
-        TestEnemyShooting wizard = GetComponent<TestEnemyShooting>();
-        if (wizard != null)
-        {
-            wizard.isDead = true;
-        }
-  
-        
-        
-        animator.SetBool("Dead", true); 
-        yield return new WaitForSeconds(1.0f); // Adjust the delay time as needed
-        Destroy(gameObject);
-        Instantiate(lootDrop, transform.position, Quaternion.identity);
+        animator.SetBool("Dead", true);
         LevelManager.instance.enemyCount -= 1;
+        isDestroyed = true;
         if (LevelManager.instance.enemyCount <= 0)
         {
+            yield return new WaitForSeconds(0.5f);
             LevelManager.instance.NextLevel();
         }
+//        //gameObject.EnemyMeleeAttack.player = null;
+//        EnemyMeleeAttack enemMelee = GetComponent<EnemyMeleeAttack>();
+//        if (enemMelee != null)
+//        {
+//            enemMelee.isDead = true;
+//        }
+//
+//        TestEnemyShooting wizard = GetComponent<TestEnemyShooting>();
+//        if (wizard != null)
+//        {
+//            wizard.isDead = true;
+//        }
+//
+//        animator.SetBool("Dead", true);
+//        yield return new WaitForSeconds(1.0f); // Adjust the delay time as needed
+//        Destroy(gameObject);
+//        Instantiate(lootDrop, transform.position, Quaternion.identity);
+//        LevelManager.instance.enemyCount -= 1;
+//        if (LevelManager.instance.enemyCount <= 0)
+//        {
+//            LevelManager.instance.NextLevel();
+//        }
     }
-
     private float CalculateHealthPercentage() {
         return (health / maxHealth);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
 
