@@ -58,24 +58,24 @@ public class EnemyReceiveDamage : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             LevelManager.instance.NextLevel();
         }
-//        //gameObject.EnemyMeleeAttack.player = null;
-//        EnemyMeleeAttack enemMelee = GetComponent<EnemyMeleeAttack>();
-//        if (enemMelee != null)
-//        {
-//            enemMelee.isDead = true;
-//        }
+       //gameObject.EnemyMeleeAttack.player = null;
+       EnemyMeleeAttack enemMelee = GetComponent<EnemyMeleeAttack>();
+       if (enemMelee != null)
+       {
+           enemMelee.isDead = true;
+       }
+
+       TestEnemyShooting wizard = GetComponent<TestEnemyShooting>();
+       if (wizard != null)
+       {
+           wizard.isDead = true;
+       }
 //
-//        TestEnemyShooting wizard = GetComponent<TestEnemyShooting>();
-//        if (wizard != null)
-//        {
-//            wizard.isDead = true;
-//        }
-//
-//        animator.SetBool("Dead", true);
-//        yield return new WaitForSeconds(1.0f); // Adjust the delay time as needed
-//        Destroy(gameObject);
-//        Instantiate(lootDrop, transform.position, Quaternion.identity);
-//        LevelManager.instance.enemyCount -= 1;
+        animator.SetBool("Dead", true);
+        yield return new WaitForSeconds(1.0f); // Adjust the delay time as needed
+        Destroy(gameObject);
+        Instantiate(lootDrop, transform.position, Quaternion.identity);
+        // LevelManager.instance.enemyCount -= 1;
 //        if (LevelManager.instance.enemyCount <= 0)
 //        {
 //            LevelManager.instance.NextLevel();

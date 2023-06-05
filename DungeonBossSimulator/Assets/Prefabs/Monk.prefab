@@ -161,6 +161,7 @@ MonoBehaviour:
   maxDamage: 3
   projectileForce: 0
   cooldown: 0
+  isDead: 0
 --- !u!50 &-266611191167421367
 Rigidbody2D:
   serializedVersion: 4
@@ -195,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 10
+  maxHealth: 25
   healthBar: {fileID: 7943522114909977498}
   healthBarSlider: {fileID: 7943522114909977476}
   lootDrop: {fileID: 8862175120893293825, guid: 9443372692b56bc4ead6205a72754fcb, type: 3}
