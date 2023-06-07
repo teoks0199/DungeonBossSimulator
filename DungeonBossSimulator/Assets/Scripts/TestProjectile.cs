@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestProjectile : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float damage;
+    //public float damage = PlayerStats.playerStats.projectileDamage;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,7 +13,7 @@ public class TestProjectile : MonoBehaviour
         {
             if (collision.GetComponent<EnemyReceiveDamage>() != null) 
             {
-                collision.GetComponent<EnemyReceiveDamage>().DealDamage(damage);
+                collision.GetComponent<EnemyReceiveDamage>().DealDamage(PlayerStats.playerStats.projectileDamage);
             }
             if (collision.tag != "Loot" && collision.tag != "Aura")
             {
