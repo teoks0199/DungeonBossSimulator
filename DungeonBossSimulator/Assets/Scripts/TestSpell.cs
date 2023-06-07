@@ -14,7 +14,7 @@ public class TestSpell : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && Time.time >= lastFireTime + cooldownDuration)
+        if (Input.GetMouseButtonDown(1) && Time.time >= lastFireTime + cooldownDuration)
         {
             isFiring = true;
             StartCoroutine(FireProjectiles());

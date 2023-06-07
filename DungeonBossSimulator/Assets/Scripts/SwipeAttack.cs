@@ -21,7 +21,7 @@ public class SwipeAttack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetMouseButtonDown(0))
         {
             if (Time.time - lastAttackTime >= cooldownDuration)
             {
