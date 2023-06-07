@@ -15,7 +15,7 @@ public class TestEnemyProjectile : MonoBehaviour
                 PlayerMovement.animator.SetTrigger("Hit");
                 PlayerStats.playerStats.DealDamage(damage);                    
             }
-            if (collision.tag != "Loot")
+            if (collision.tag != "Loot" && collision.tag != "Aura")
             {
                 Destroy(gameObject);
             }

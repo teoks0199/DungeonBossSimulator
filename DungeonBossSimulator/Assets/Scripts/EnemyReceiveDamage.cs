@@ -55,7 +55,7 @@ public class EnemyReceiveDamage : MonoBehaviour
         isDestroyed = true;
         if (LevelManager.instance.enemyCount <= 0)
         {
-            yield return new WaitForSeconds(0.5f);
+            // yield return new WaitForSeconds(0.5f);
             LevelManager.instance.NextLevel();
         }
        //gameObject.EnemyMeleeAttack.player = null;

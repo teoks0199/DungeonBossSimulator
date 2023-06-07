@@ -753,10 +753,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6493368034524562047, guid: 7045e7154001de84693fc50a46bee4f7, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 7943522113273870772, guid: 7045e7154001de84693fc50a46bee4f7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -32296,10 +32292,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1256416725, guid: d8292ce2d85dda6449232720f6bff13a, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1901943521, guid: d8292ce2d85dda6449232720f6bff13a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -32307,10 +32299,6 @@ PrefabInstance:
     - target: {fileID: 1901943521, guid: d8292ce2d85dda6449232720f6bff13a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 564504714721985694, guid: d8292ce2d85dda6449232720f6bff13a, type: 3}
-      propertyPath: maxHealth
-      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2580696848874803134, guid: d8292ce2d85dda6449232720f6bff13a, type: 3}
       propertyPath: m_Pivot.x
