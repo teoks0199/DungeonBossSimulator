@@ -9,6 +9,6 @@ public class IncreaseHealthUpgrade : Upgrade
     {
         PlayerStats.playerStats.maxHealth += 10;
         PlayerStats.playerStats.HealCharacter(10);
-        Debug.Log("Upgraded");
+        //Debug.Log("Upgraded");
     }
 }

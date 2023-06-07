@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     public Slider healthSlider;
     public float health;
     public float maxHealth = 999;
+    public float projectileDamage = 50;
     public int coins;
     public GameObject impactAttack;
     public GameObject playerModel;
@@ -35,7 +36,9 @@ public class PlayerStats : MonoBehaviour
         DontDestroyOnLoad(this);
         health = maxHealth;
 
-        upgradePool.Add("IncreaseMaxHealth", new IncreaseHealthUpgrade());
+        upgradePool.Add("Increase Max Health", new IncreaseHealthUpgrade());
+        upgradePool.Add("Increase Projectile Damage", new ProjectileDamageUpgrade());
+        upgradePool.Add("Heal 50HP", new HealUpgrade());
     }
 
     void Start()
