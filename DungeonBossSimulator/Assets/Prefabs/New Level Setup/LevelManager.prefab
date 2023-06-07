@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCount: 4
+  playerPrefab: {fileID: 0}
 --- !u!114 &1465869359859529859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +62,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPanel: {fileID: 0}
   nextLevelPanel: {fileID: 0}
+  upgradePanel: {fileID: 0}
+  Upgrade1: {fileID: 0}
+  Upgrade2: {fileID: 0}
+  Upgrade3: {fileID: 0}
 --- !u!114 &1465869359859529862
 MonoBehaviour:
   m_ObjectHideFlags: 0

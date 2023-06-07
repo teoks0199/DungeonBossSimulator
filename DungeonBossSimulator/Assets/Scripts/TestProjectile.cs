@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestProjectile : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float damage;
+    public float damage ;
 
     void OnTriggerEnter2D(Collider2D collision)
     {

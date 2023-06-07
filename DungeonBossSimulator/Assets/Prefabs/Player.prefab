@@ -138,8 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 3281874612376729195, guid: 251c03a55c37e574da49db65f4e6a8ee, type: 3}
-  minDamage: 5
-  maxDamage: 10
+  damage: 50
   projectileForce: 2
   cooldownDuration: 0.3
 --- !u!50 &628195766
@@ -266,4 +265,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impactAttack: {fileID: 7926163667032392743, guid: ab3af1755ac0231459570939abdeede2, type: 3}
-  playerModel: {fileID: 0}

@@ -31590,6 +31590,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 304134183, guid: 88fa5817b3ad33744b23d35e750cd978, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7210683772890567587, guid: 88fa5817b3ad33744b23d35e750cd978, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -31763,6 +31767,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7210683774338101110, guid: 88fa5817b3ad33744b23d35e750cd978, type: 3}
   m_PrefabInstance: {fileID: 325683562}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &325683566 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9071772304375079131, guid: 88fa5817b3ad33744b23d35e750cd978, type: 3}
+  m_PrefabInstance: {fileID: 325683562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &325683567 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9071772303966324941, guid: 88fa5817b3ad33744b23d35e750cd978, type: 3}
+  m_PrefabInstance: {fileID: 325683562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &649967890 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7210683773301135384, guid: 88fa5817b3ad33744b23d35e750cd978, type: 3}
@@ -32318,6 +32344,14 @@ PrefabInstance:
       propertyPath: Upgrade1
       value: 
       objectReference: {fileID: 1898752803}
+    - target: {fileID: 1465869359859529859, guid: fd2f05276adc37f46870fddcef40bba4, type: 3}
+      propertyPath: Upgrade2
+      value: 
+      objectReference: {fileID: 325683567}
+    - target: {fileID: 1465869359859529859, guid: fd2f05276adc37f46870fddcef40bba4, type: 3}
+      propertyPath: Upgrade3
+      value: 
+      objectReference: {fileID: 325683566}
     - target: {fileID: 1465869359859529859, guid: fd2f05276adc37f46870fddcef40bba4, type: 3}
       propertyPath: deathPanel
       value: 

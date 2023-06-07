@@ -55,7 +55,7 @@ public class EnemyReceiveDamage : MonoBehaviour
         isDestroyed = true;
         if (LevelManager.instance.enemyCount <= 0)
         {
-            yield return new WaitForSeconds(0.5f);
+            //yield return new WaitForSeconds(0.5f);
             LevelManager.instance.NextLevel();
         }
        //gameObject.EnemyMeleeAttack.player = null;
@@ -70,7 +70,6 @@ public class EnemyReceiveDamage : MonoBehaviour
        {
            wizard.isDead = true;
        }
-//
         animator.SetBool("Dead", true);
         yield return new WaitForSeconds(1.0f); // Adjust the delay time as needed
         Destroy(gameObject);

@@ -5,8 +5,7 @@ using UnityEngine;
 public class TestSpell : MonoBehaviour
 {
     public GameObject projectile;
-    public float minDamage;
-    public float maxDamage;
+    public float damage = PlayerStats.playerStats.projectileDamage;
     public float projectileForce;
     public float cooldownDuration;
 
@@ -36,7 +35,7 @@ public class TestSpell : MonoBehaviour
             Vector2 direction = (mousePos - myPos).normalized;
             spell.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
             // Random damage
-            spell.GetComponent<TestProjectile>().damage = Random.Range(minDamage, maxDamage);
+            spell.GetComponent<TestProjectile>().damage = damage;
             lastFireTime = Time.time; // Update the last fire time
             yield return new WaitForSeconds(cooldownDuration);
         }
