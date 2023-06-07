@@ -9,13 +9,13 @@ public class TestProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "Player")
+        if (collision.tag != "Player" )
         {
             if (collision.GetComponent<EnemyReceiveDamage>() != null) 
             {
                 collision.GetComponent<EnemyReceiveDamage>().DealDamage(damage);
             }
-            if (collision.tag != "Loot")
+            if (collision.tag != "Loot" && collision.tag != "Aura")
             {
                 Destroy(gameObject);
             }

@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 2378431864020340916}
   - component: {fileID: 8691341283235259914}
   - component: {fileID: -2936747484184220507}
+  - component: {fileID: -5914365395022140526}
+  - component: {fileID: 6874632168860107543}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -141,7 +143,7 @@ MonoBehaviour:
   minDamage: 5
   maxDamage: 10
   projectileForce: 2
-  cooldownDuration: 0.3
+  cooldownDuration: 1
 --- !u!50 &628195766
 Rigidbody2D:
   serializedVersion: 4
@@ -266,4 +268,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impactAttack: {fileID: 7926163667032392743, guid: ab3af1755ac0231459570939abdeede2, type: 3}
-  playerModel: {fileID: 0}
+--- !u!114 &-5914365395022140526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743130650215018110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffabf0ccbb1c7ea41ab9b5cb245eefb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swipeAttack: {fileID: 4121093914838680993, guid: af8b5232bcdec724294ac348ebc2505d, type: 3}
+  cooldownDuration: 1
+--- !u!114 &6874632168860107543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743130650215018110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbcaf8d88b92364f89f48f0480bd8bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  auraBuff: {fileID: 4084431273608666552, guid: 21cde13457c0b634f9b2ce4fa950d58a, type: 3}
