@@ -10,8 +10,13 @@ public class PlayerStats : MonoBehaviour
     public static PlayerStats playerStats;
 
     public GameObject player;
-    public TMP_Text healthText;
-    public Slider healthSlider;
+    public Canvas hpCanvas;
+    public TMP_Text hpText;
+    public Slider hpSlider;
+    public Canvas healthCanvas;
+    private TMP_Text healthText;
+    private Slider healthSlider;
+    
     public float health;
     public float maxHealth = 999;
     public float projectileDamage;
@@ -34,6 +39,7 @@ public class PlayerStats : MonoBehaviour
             playerStats = this;
         }
         DontDestroyOnLoad(this);
+        
         health = maxHealth;
         projectileDamage = 10;
 
@@ -47,6 +53,10 @@ public class PlayerStats : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Level 01")
         {
             playerModel = Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
+            healthCanvas = Instantiate(hpCanvas);
+            DontDestroyOnLoad(healthCanvas);
+            healthText = healthCanvas.GetComponentInChildren<TMP_Text>();
+            healthSlider = healthCanvas.GetComponentInChildren<Slider>();
         }
 
         SetHealthUI();
@@ -96,6 +106,7 @@ public class PlayerStats : MonoBehaviour
         playerStats = new PlayerStats();
         Destroy(temp.playerModel);
         Destroy(temp);
+        //Destroy(healthCanvas);
         LevelManager.instance.GameOver();
     }
 

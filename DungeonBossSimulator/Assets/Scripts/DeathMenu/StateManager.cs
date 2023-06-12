@@ -17,7 +17,9 @@ public class StateManager : MonoBehaviour
             if (name == "MainMenu") 
             {
                 Destroy(PlayerStats.playerStats.playerModel);
+                Destroy(PlayerStats.playerStats.healthCanvas);
                 Destroy(PlayerStats.playerStats);
+                
             }
             //PlayerStats.playerStats.player.SetActive(true);
             SceneManager.LoadScene(name);
