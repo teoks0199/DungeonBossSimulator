@@ -11,8 +11,8 @@ public class PlayerStats : MonoBehaviour
 
     public GameObject player;
     public Canvas hpCanvas;
-    public TMP_Text hpText;
-    public Slider hpSlider;
+    //public TMP_Text hpText;
+    //public Slider hpSlider;
     public Canvas healthCanvas;
     private TMP_Text healthText;
     private Slider healthSlider;
