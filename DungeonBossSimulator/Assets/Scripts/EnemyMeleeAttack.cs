@@ -56,21 +56,19 @@ public class EnemyMeleeAttack : MonoBehaviour
         }  
         
     }
-
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.tag != "Enemy")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            if(collision.tag == "Player")
-            {
-                PlayerMovement.animator.SetTrigger("Hit");
-                PlayerStats.playerStats.DealDamage(Random.Range(minDamage, maxDamage));
-                //StartCoroutine(Knockback());
-                Vector2 difference = transform.position - collision.transform.position;
-                transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
-            }
+            PlayerMovement.animator.SetTrigger("Hit");
+            PlayerStats.playerStats.DealDamage(Random.Range(minDamage, maxDamage));
+            // StartCoroutine(Knockback());
+
+            Vector2 difference = transform.position - collision.transform.position;
+            transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
         }
     }
+
 
     /*public IEnumerator Knockback()
     {
