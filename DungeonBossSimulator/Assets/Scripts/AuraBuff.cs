@@ -10,15 +10,17 @@ public class AuraBuff : MonoBehaviour
     void Start()
     {
         playerModel = PlayerStats.playerStats.playerModel;
+        TriggerAuraBuff();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("q"))
+        /*if (Input.GetKeyDown("q"))
         {
             TriggerAuraBuff();
-        }
+        }*/
+        //TriggerAuraBuff();
     }
 
     void TriggerAuraBuff()

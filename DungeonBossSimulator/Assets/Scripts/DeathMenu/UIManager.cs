@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     public Button Upgrade2;
     public Button Upgrade3;
     //Dictionary<string, Upgrade> upgradePool = PlayerStats.playerStats.upgradePool;
-    (string, Upgrade)[] upgradeChoices;
+    public static (string, Upgrade)[] upgradeChoices;
     
 
     public void ToggleDeathPanel() 

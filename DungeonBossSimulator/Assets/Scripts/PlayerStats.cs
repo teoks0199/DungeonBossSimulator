@@ -41,11 +41,13 @@ public class PlayerStats : MonoBehaviour
         DontDestroyOnLoad(this);
         
         health = maxHealth;
-        projectileDamage = 10;
+        projectileDamage = 1000;
 
         upgradePool.Add("Increase Max Health", new IncreaseHealthUpgrade());
         upgradePool.Add("Increase Projectile Damage", new ProjectileDamageUpgrade());
         upgradePool.Add("Heal 50HP", new HealUpgrade());
+        upgradePool.Add("Unlock Impact Attack", new UnlockImpactAttackUpgrade());
+        upgradePool.Add("Unlock Aura Buff", new UnlockAuraBuffUpgrade());
     }
 
     void Start()
