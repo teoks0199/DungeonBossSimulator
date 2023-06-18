@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AuraBuffScript : MonoBehaviour
 {
-    public float damage;
+    public float damage = PlayerStats.playerStats.auraBuffDamage;
     public float damageInterval;
     public float checkInterval;
     public float auraRadius;

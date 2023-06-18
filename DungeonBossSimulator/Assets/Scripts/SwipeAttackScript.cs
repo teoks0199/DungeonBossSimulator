@@ -5,7 +5,7 @@ using UnityEngine;
 public class SwipeAttackScript : MonoBehaviour
 {
     private float despawnDelay = 0.5f; // Delay before despawning the impact attack
-    public float damage;
+    private float damage = PlayerStats.playerStats.swipeDamage;
     public Animator animator;
 
     public void InitializeDespawn()

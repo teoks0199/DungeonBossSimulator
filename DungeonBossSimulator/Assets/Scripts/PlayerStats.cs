@@ -20,6 +20,9 @@ public class PlayerStats : MonoBehaviour
     public float health;
     public float maxHealth = 999;
     public float projectileDamage;
+    public float swipeDamage;
+    public float auraBuffDamage;
+    public float impactAttackDamage;
     public int coins;
     public GameObject impactAttack;
     public GameObject playerModel;
@@ -42,9 +45,13 @@ public class PlayerStats : MonoBehaviour
         
         health = maxHealth;
         projectileDamage = 1000;
+        swipeDamage = 10;
+        auraBuffDamage = 1F;
+        impactAttackDamage = 10;
 
         upgradePool.Add("Increase Max Health", new IncreaseHealthUpgrade());
         upgradePool.Add("Increase Projectile Damage", new ProjectileDamageUpgrade());
+        upgradePool.Add("Increase Swipe Damage", new SwipeDamageUpgrade());
         upgradePool.Add("Heal 50HP", new HealUpgrade());
         upgradePool.Add("Unlock Impact Attack", new UnlockImpactAttackUpgrade());
         upgradePool.Add("Unlock Aura Buff", new UnlockAuraBuffUpgrade());
