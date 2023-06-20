@@ -45,7 +45,7 @@ public class PlayerStats : MonoBehaviour
         
         health = maxHealth;
         projectileDamage = 1000;
-        swipeDamage = 10;
+        swipeDamage = 5;
         auraBuffDamage = 1F;
         impactAttackDamage = 10;
 
