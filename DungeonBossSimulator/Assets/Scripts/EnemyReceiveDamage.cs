@@ -11,7 +11,7 @@ public class EnemyReceiveDamage : MonoBehaviour
     public Slider healthBarSlider;
     public GameObject lootDrop;
     private Animator animator;
-    private bool isDestroyed = false;
+    public bool isDestroyed = false;
 
     // Start is called before the first frame update
     void Start()
