@@ -70,6 +70,12 @@ public class EnemyReceiveDamage : MonoBehaviour
        {
            wizard.isDead = true;
        }
+
+       EnemyPriest priest = GetComponent<EnemyPriest>();
+       if (priest != null)
+       {
+           priest.isDead = true;
+       }
 //
         animator.SetBool("Dead", true);
         yield return new WaitForSeconds(1.0f); // Adjust the delay time as needed

@@ -19074,6 +19074,7 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  isDead: 0
 --- !u!1001 &2147190578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19216,7 +19217,7 @@ PrefabInstance:
       objectReference: {fileID: 223744940}
     - target: {fileID: 1465869359859529860, guid: fd2f05276adc37f46870fddcef40bba4, type: 3}
       propertyPath: enemyCount
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1465869359859529861, guid: fd2f05276adc37f46870fddcef40bba4, type: 3}
       propertyPath: m_RootOrder

@@ -12,10 +12,21 @@ public class EnemyPriest : MonoBehaviour
     private bool isHealing = false;
     private EnemyReceiveDamage[] enemies;
 
+    public bool isDead = false;
+
     private void Start()
     {
         StartCoroutine(HealAllEnemiesRoutine());
     }
+    
+    void Update() {
+        if (isDead)
+        {
+            GetComponent<BoxCollider2D> ().enabled = false;
+            StopCoroutine(HealAllEnemiesRoutine());
+        }  
+    }
+
 
     private IEnumerator HealAllEnemiesRoutine()
     {
