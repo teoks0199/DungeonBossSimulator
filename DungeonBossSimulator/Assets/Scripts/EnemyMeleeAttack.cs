@@ -14,60 +14,52 @@ public class EnemyMeleeAttack : MonoBehaviour
     public float cooldown;
     public bool isDead = false;
     private SpriteRenderer _renderer;
-    //private BoxCollider2D collider;
-
     private Rigidbody2D rb;
+
+    // New variable for knockback force
+    public float knockbackForce;
 
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //StartCoroutine(ShootPlayer());
-        // player = FindObjectOfType<PlayerMovement>().gameObject;
-        //player = PlayerStats.playerStats.playerModel;
         _renderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        
         if (!isDead)
         {
-            //distance = Vector2.Distance(transform.position, player.transform.position);
-            //Vector2 direction = player.transform.position - transform.position;
-            //direction.Normalize();
-            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             player = PlayerStats.playerStats.playerModel;
-            transform.position = Vector2.MoveTowards(this.transform.position, 
-            player.transform.position, speed * Time.deltaTime);
-            //transform.rotation = Quaternion.Euler(Vector3.forward * angle)
-        } 
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        }
         else
         {
-            GetComponent<BoxCollider2D> ().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
         }
-        
-        if (this.transform.position.x < player.transform.position.x)
+
+        if (transform.position.x < player.transform.position.x)
         {
             _renderer.flipX = false;
         }
-        else if (this.transform.position.x > player.transform.position.x)
+        else if (transform.position.x > player.transform.position.x)
         {
             _renderer.flipX = true;
-        }  
-        
+        }
     }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerMovement.animator.SetTrigger("Hit");
             PlayerStats.playerStats.DealDamage(Random.Range(minDamage, maxDamage));
-            // StartCoroutine(Knockback());
 
             Vector2 difference = transform.position - collision.transform.position;
-            transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
+            rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);
         }
     }
+}
+
 
 
     /*public IEnumerator Knockback()
@@ -100,4 +92,4 @@ public class EnemyMeleeAttack : MonoBehaviour
                 StartCoroutine(ShootPlayer());
             }
     }*/
-}
+
