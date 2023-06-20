@@ -12,11 +12,14 @@ public class EnemyPriest : MonoBehaviour
     private bool isHealing = false;
     private EnemyReceiveDamage[] enemies;
 
+    private Animator animator;
+
     public bool isDead = false;
 
     private void Start()
     {
         StartCoroutine(HealAllEnemiesRoutine());
+        animator = GetComponent<Animator>();
     }
     
     void Update() {
@@ -24,7 +27,8 @@ public class EnemyPriest : MonoBehaviour
         {
             GetComponent<BoxCollider2D> ().enabled = false;
             StopCoroutine(HealAllEnemiesRoutine());
-        }  
+        } 
+        animator.SetBool("Heal", false);
     }
 
 
@@ -41,6 +45,7 @@ public class EnemyPriest : MonoBehaviour
 {
     Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, healRange, enemyLayerMask);
     Debug.Log("Number of colliders detected: " + colliders.Length);
+    animator.SetBool("Heal", true);
 
     foreach (Collider2D collider in colliders)
     {
@@ -52,6 +57,7 @@ public class EnemyPriest : MonoBehaviour
         }
 
     }
+    
 }
 
     private void OnDrawGizmosSelected()
