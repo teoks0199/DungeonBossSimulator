@@ -16,7 +16,12 @@ public class PlayerStats : MonoBehaviour
     public Canvas healthCanvas;
     private TMP_Text healthText;
     private Slider healthSlider;
-    
+
+    public Image image;
+
+    public float cooldown1 = 1;
+    public bool isCooldown = false;
+
     public float health;
     public float maxHealth = 999;
     public float projectileDamage;
@@ -28,6 +33,16 @@ public class PlayerStats : MonoBehaviour
     public GameObject playerModel;
 
     public Dictionary<string, Upgrade> upgradePool = new Dictionary<string, Upgrade>();
+
+    void Update() {
+
+        if (isCooldown) {
+
+            cooldownImage();
+
+        }
+
+    }
     
 
     void Awake()
@@ -65,6 +80,8 @@ public class PlayerStats : MonoBehaviour
             healthCanvas = Instantiate(hpCanvas);
             DontDestroyOnLoad(healthCanvas);
             healthText = healthCanvas.GetComponentInChildren<TMP_Text>();
+            image = healthCanvas.GetComponentsInChildren<Image>()[1];
+            image.fillAmount = 1;
             healthSlider = healthCanvas.GetComponentInChildren<Slider>();
         }
 
@@ -77,6 +94,7 @@ public class PlayerStats : MonoBehaviour
         // Debug.Log(damage);
         SetHealthUI();
         CheckDeath();
+        // cooldownImage();
     }
 
     public void HealCharacter(float heal)
@@ -100,6 +118,18 @@ public class PlayerStats : MonoBehaviour
         healthText.text = Mathf.Ceil(health).ToString() + " / " + Mathf.Ceil(maxHealth).ToString();
     }
 
+    public void cooldownImage()
+    {
+        image.fillAmount -= 1 / cooldown1 * Time.deltaTime;
+
+        if (image.fillAmount <= 0) {
+            image.fillAmount = 1;
+            isCooldown = false;
+        }
+
+    }
+
+        
     private void CheckDeath()
     {
         Debug.Log(health);

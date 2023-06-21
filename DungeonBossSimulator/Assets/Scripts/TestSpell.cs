@@ -12,23 +12,56 @@ public class TestSpell : MonoBehaviour
     private bool isFiring = false;
     private float lastFireTime;
 
+    // private PlayerStats playerStats;
+
+    // public Image cooldownImage;
+
+
+    // private void Start()
+    // {
+    //     playerStats = FindObjectOfType<PlayerStats>();
+    // }
+
+
     void Update()
     {
         if (Input.GetMouseButtonDown(1) && Time.time >= lastFireTime + cooldownDuration)
         {
-            isFiring = true;
+            // isFiring = true;
             StartCoroutine(FireProjectiles());
         }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            isFiring = false;
-        }
+        // else if (Input.GetMouseButtonUp(0))
+        // {
+        //     isFiring = false;
+        // }
     }
+
+    // private void Update()
+    // {
+    //     if (Input.GetMouseButtonDown(1) && Time.time >= playerStats.lastFireTime + playerStats.cooldownDuration)
+    //     {
+    //         isFiring = true;
+    //         StartCoroutine(FireProjectiles());
+    //     }
+    //     else if (Input.GetMouseButtonUp(0))
+    //     {
+    //         isFiring = false;
+    //     }
+
+    //     // Update the cooldown UI
+    //     if (cooldownImage != null)
+    //     {
+    //         float cooldownTimeRemaining = Mathf.Clamp(playerStats.lastFireTime + playerStats.cooldownDuration - Time.time, 0f, playerStats.cooldownDuration);
+    //         float fillAmount = cooldownTimeRemaining / playerStats.cooldownDuration;
+    //         cooldownImage.fillAmount = fillAmount;
+    //     }
+    // }
+
 
     IEnumerator FireProjectiles()
     {
-        while (isFiring)
-        {
+        // while (isFiring)
+        // {
             GameObject spell = Instantiate(projectile, transform.position, Quaternion.identity);
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 myPos = transform.position;
@@ -37,9 +70,10 @@ public class TestSpell : MonoBehaviour
             // Random damage
             //spell.GetComponent<TestProjectile>().damage = damage;
             lastFireTime = Time.time; // Update the last fire time
+            PlayerStats.playerStats.isCooldown = true;
+            PlayerStats.playerStats.cooldownImage();
             yield return new WaitForSeconds(cooldownDuration);
         }
-    }
 }
 
 
