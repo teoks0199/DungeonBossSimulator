@@ -23,7 +23,7 @@ public class PlayerStats : MonoBehaviour
     public bool isCooldown = false;
 
     public float health;
-    public float maxHealth = 999;
+    public float maxHealth;
     public float projectileDamage;
     public float swipeDamage;
     public float auraBuffDamage;
@@ -57,18 +57,18 @@ public class PlayerStats : MonoBehaviour
             playerStats = this;
         }
         DontDestroyOnLoad(this);
-        
+        maxHealth = 150;
         health = maxHealth;
-        projectileDamage = 1000;
-        swipeDamage = 5;
-        auraBuffDamage = 1F;
+        projectileDamage = 20;
+        swipeDamage = 20;
+        auraBuffDamage = 4F;
         impactAttackDamage = 10;
 
         upgradePool.Add("Increase Max Health", new IncreaseHealthUpgrade());
         upgradePool.Add("Increase Projectile Damage", new ProjectileDamageUpgrade());
         upgradePool.Add("Increase Swipe Damage", new SwipeDamageUpgrade());
-        upgradePool.Add("Heal 50HP", new HealUpgrade());
-        upgradePool.Add("Unlock Impact Attack", new UnlockImpactAttackUpgrade());
+        upgradePool.Add("Heal 100HP", new HealUpgrade());
+        upgradePool.Add("Unlock Impact Attack [Spacebar]", new UnlockImpactAttackUpgrade());
         upgradePool.Add("Unlock Aura Buff", new UnlockAuraBuffUpgrade());
     }
 

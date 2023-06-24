@@ -536,7 +536,7 @@ MonoBehaviour:
   projectile: {fileID: 3281874612376729195, guid: 61cf6843ec019be48beb9a23a8ab329a, type: 3}
   player: {fileID: 0}
   minDamage: 10
-  maxDamage: 20
+  maxDamage: 10
   projectileForce: 2
   cooldown: 2
   isDead: 0
@@ -553,7 +553,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 50
+  maxHealth: 30
   healthBar: {fileID: 382752975}
   healthBarSlider: {fileID: 382752977}
   lootDrop: {fileID: 8862175120893293825, guid: 9443372692b56bc4ead6205a72754fcb, type: 3}
+  isDestroyed: 0

@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dc51044b5c14df4eb081bdf0793892a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0.5
+  damage: 10
   damageInterval: 0.1
   checkInterval: 0.1
   auraRadius: 0.4
