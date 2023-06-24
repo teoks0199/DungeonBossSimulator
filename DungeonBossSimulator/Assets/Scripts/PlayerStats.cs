@@ -241,9 +241,7 @@ public class PlayerStats : MonoBehaviour
 
     public GameObject player;
 
-    public float health;
 
-    public float maxHealth;
 
 ////////// Health UI ///////////////////////////////////////
     public Canvas hpCanvas;
