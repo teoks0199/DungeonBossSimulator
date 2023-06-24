@@ -141,7 +141,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 3281874612376729195, guid: 251c03a55c37e574da49db65f4e6a8ee, type: 3}
   projectileForce: 2
-  cooldownDuration: 1
 --- !u!50 &628195766
 Rigidbody2D:
   serializedVersion: 4
@@ -279,7 +278,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swipeAttack: {fileID: 4121093914838680993, guid: af8b5232bcdec724294ac348ebc2505d, type: 3}
-  cooldownDuration: 0.4
 --- !u!114 &6874632168860107543
 MonoBehaviour:
   m_ObjectHideFlags: 0

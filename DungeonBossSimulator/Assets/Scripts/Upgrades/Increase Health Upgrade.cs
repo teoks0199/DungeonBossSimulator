@@ -7,8 +7,8 @@ public class IncreaseHealthUpgrade : Upgrade
     // Start is called before the first frame update
     public void upgrade()
     {
-        PlayerStats.playerStats.maxHealth += 10;
-        PlayerStats.playerStats.HealCharacter(10);
+        PlayerStats.playerStats.maxHealth += 50;
+        PlayerStats.playerStats.HealCharacter(50);
         //Debug.Log("Upgraded");
     }
 }

@@ -7,27 +7,55 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
+    public Image image;
+    public float cooldown1 = 1;
+    public bool isCooldown = false;
+
+////////////////////////////////////////////////////////////
     public static PlayerStats playerStats;
 
     public GameObject player;
+
+
+
+////////// Health UI ///////////////////////////////////////
     public Canvas hpCanvas;
-    //public TMP_Text hpText;
-    //public Slider hpSlider;
     public Canvas healthCanvas;
     private TMP_Text healthText;
     private Slider healthSlider;
 
-    public Image image;
+////////// Cooldowns ///////////////////////////////////////
 
-    public float cooldown1 = 1;
-    public bool isCooldown = false;
+    public Image projectileAttackImage;
+
+    public Image swipeAttackImage;
+
+    public Image impactAttackImage;
+
+    public float projectileCoolDown;
+
+    public float swipeAttackCoolDown;
+
+    public float impactAttackCoolDown;
+
+    public bool isProjectileCooldown = false;
+
+    public bool isSwipeAttackCooldown = false;
+
+    public bool isImpactCooldown = false;
+
+
+////////// Damage Numbers ///////////////////////////////////////
 
     public float health;
-    public float maxHealth = 999;
+    public float maxHealth;
     public float projectileDamage;
     public float swipeDamage;
     public float auraBuffDamage;
     public float impactAttackDamage;
+
+//////////////////////////////////////////////////////////
+
     public int coins;
     public GameObject impactAttack;
     public GameObject playerModel;
@@ -36,9 +64,21 @@ public class PlayerStats : MonoBehaviour
 
     void Update() {
 
-        if (isCooldown) {
+        if (isProjectileCooldown) {
 
-            cooldownImage();
+            projectileCoolDownImage();
+
+        }
+
+        if (isSwipeAttackCooldown) {
+
+            swipeAttackCoolDownImage();
+
+        }
+
+        if (isImpactCooldown) {
+
+            impactAttackCoolDownImage();
 
         }
 
@@ -57,18 +97,23 @@ public class PlayerStats : MonoBehaviour
             playerStats = this;
         }
         DontDestroyOnLoad(this);
-        
+
+        maxHealth = 150;
         health = maxHealth;
-        projectileDamage = 1000;
-        swipeDamage = 5;
-        auraBuffDamage = 1F;
+        projectileDamage = 20;
+        swipeDamage = 20;
+        auraBuffDamage = 4F;
         impactAttackDamage = 10;
+    
+        projectileCoolDown = 0.1f;
+        swipeAttackCoolDown = 0;
+        impactAttackCoolDown = 2f;
 
         upgradePool.Add("Increase Max Health", new IncreaseHealthUpgrade());
         upgradePool.Add("Increase Projectile Damage", new ProjectileDamageUpgrade());
         upgradePool.Add("Increase Swipe Damage", new SwipeDamageUpgrade());
-        upgradePool.Add("Heal 50HP", new HealUpgrade());
-        upgradePool.Add("Unlock Impact Attack", new UnlockImpactAttackUpgrade());
+        upgradePool.Add("Heal 100HP", new HealUpgrade());
+        upgradePool.Add("Unlock Impact Attack [Spacebar]", new UnlockImpactAttackUpgrade());
         upgradePool.Add("Unlock Aura Buff", new UnlockAuraBuffUpgrade());
     }
 
@@ -80,8 +125,9 @@ public class PlayerStats : MonoBehaviour
             healthCanvas = Instantiate(hpCanvas);
             DontDestroyOnLoad(healthCanvas);
             healthText = healthCanvas.GetComponentInChildren<TMP_Text>();
-            image = healthCanvas.GetComponentsInChildren<Image>()[1];
-            image.fillAmount = 1;
+            projectileAttackImage = healthCanvas.GetComponentsInChildren<Image>()[2];
+            swipeAttackImage = healthCanvas.GetComponentsInChildren<Image>()[1];
+            impactAttackImage = healthCanvas.GetComponentsInChildren<Image>()[3];
             healthSlider = healthCanvas.GetComponentInChildren<Slider>();
         }
 
@@ -91,10 +137,8 @@ public class PlayerStats : MonoBehaviour
     public void DealDamage(float damage)
     {
         health -= damage;
-        // Debug.Log(damage);
         SetHealthUI();
         CheckDeath();
-        // cooldownImage();
     }
 
     public void HealCharacter(float heal)
@@ -118,18 +162,39 @@ public class PlayerStats : MonoBehaviour
         healthText.text = Mathf.Ceil(health).ToString() + " / " + Mathf.Ceil(maxHealth).ToString();
     }
 
-    public void cooldownImage()
+    public void projectileCoolDownImage()
     {
-        image.fillAmount -= 1 / cooldown1 * Time.deltaTime;
+        projectileAttackImage.fillAmount -= 1 / projectileCoolDown * Time.deltaTime;
 
-        if (image.fillAmount <= 0) {
-            image.fillAmount = 1;
-            isCooldown = false;
+        if (projectileAttackImage.fillAmount <= 0) {
+            projectileAttackImage.fillAmount = 1;
+            isProjectileCooldown = false;
         }
 
     }
 
-        
+    public void swipeAttackCoolDownImage()
+    {
+        swipeAttackImage.fillAmount -= 1 / swipeAttackCoolDown * Time.deltaTime;
+
+        if (swipeAttackImage.fillAmount <= 0) {
+            swipeAttackImage.fillAmount = 1;
+            isSwipeAttackCooldown = false;
+        }
+
+    }
+
+    public void impactAttackCoolDownImage()
+    {
+        impactAttackImage.fillAmount -= 1 / impactAttackCoolDown * Time.deltaTime;
+
+        if (impactAttackImage.fillAmount <= 0) {
+            impactAttackImage.fillAmount = 1;
+            isImpactCooldown = false;
+        }
+
+    }
+
     private void CheckDeath()
     {
         Debug.Log(health);
@@ -145,7 +210,6 @@ public class PlayerStats : MonoBehaviour
         playerStats = new PlayerStats();
         Destroy(temp.playerModel);
         Destroy(temp);
-        //Destroy(healthCanvas);
         LevelManager.instance.GameOver();
     }
 
@@ -153,6 +217,4 @@ public class PlayerStats : MonoBehaviour
     {
         return (health / maxHealth);
     }
-
 }
-

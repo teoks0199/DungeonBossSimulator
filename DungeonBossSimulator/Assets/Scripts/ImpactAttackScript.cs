@@ -5,11 +5,12 @@ using UnityEngine;
 public class ImpactAttackScript : MonoBehaviour
 {
     private float despawnDelay = 0.5f; // Delay before despawning the impact attack
-    public float damage = PlayerStats.playerStats.impactAttackDamage;
+    private float damage = PlayerStats.playerStats.impactAttackDamage;
     public Animator animator;
 
     public void InitializeDespawn()
     {
+        // PlayerStats.playerStats.impactAttackCoolDownImage();
         StartCoroutine(PlayImpactAnimationAndDespawn());
     }
 
@@ -19,6 +20,7 @@ public class ImpactAttackScript : MonoBehaviour
         {
             animator.SetTrigger("Impact");
         }
+        //PlayerStats.playerStats.impactAttackCoolDownImage();
         yield return new WaitForSeconds(despawnDelay);
         Destroy(gameObject);
     }

@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b774a78a400654fb0006c896288421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 50
+  healAmount: 20
   healCooldown: 3
   healRange: 3
   enemyLayerMask:
