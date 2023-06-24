@@ -15,7 +15,7 @@ public class PlayerStats : MonoBehaviour
 
     public float health;
 
-    public float maxHealth = 999;
+    public float maxHealth;
 
 ////////// Health UI ///////////////////////////////////////
     public Canvas hpCanvas;
@@ -95,6 +95,7 @@ public class PlayerStats : MonoBehaviour
         }
         DontDestroyOnLoad(this);
         
+        maxHealth = 150;
         health = maxHealth;
         projectileDamage = 1000;
         swipeDamage = 5;
