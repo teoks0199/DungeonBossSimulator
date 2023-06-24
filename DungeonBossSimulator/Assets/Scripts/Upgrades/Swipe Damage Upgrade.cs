@@ -6,6 +6,6 @@ public class SwipeDamageUpgrade : Upgrade
 {
     public void upgrade()
     {
-        PlayerStats.playerStats.swipeDamage += 10;
+        PlayerStats.playerStats.swipeDamage += 3;
     }
 }

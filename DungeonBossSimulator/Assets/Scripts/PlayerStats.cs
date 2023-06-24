@@ -100,13 +100,13 @@ public class PlayerStats : MonoBehaviour
 
         maxHealth = 150;
         health = maxHealth;
-        projectileDamage = 20;
-        swipeDamage = 20;
+        projectileDamage = 15;
+        swipeDamage = 5;
         auraBuffDamage = 4F;
-        impactAttackDamage = 10;
+        impactAttackDamage = 20;
     
-        projectileCoolDown = 0.1f;
-        swipeAttackCoolDown = 0;
+        projectileCoolDown = 0.5f;
+        swipeAttackCoolDown = 0.3f;
         impactAttackCoolDown = 2f;
 
         upgradePool.Add("Increase Max Health", new IncreaseHealthUpgrade());
