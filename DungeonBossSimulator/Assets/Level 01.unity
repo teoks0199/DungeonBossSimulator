@@ -19234,6 +19234,18 @@ PrefabInstance:
       propertyPath: projectileDamage
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
+      propertyPath: projectileCoolDown
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
+      propertyPath: swipeAttackCoolDown
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
+      propertyPath: impactAttackCoolDown
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 788966e820856324fb44386f96064533, type: 3}
 --- !u!1001 &5777584767089335418

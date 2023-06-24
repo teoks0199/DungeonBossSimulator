@@ -7,7 +7,7 @@ public class TestSpell : MonoBehaviour
     public GameObject projectile;
     //public float damage = PlayerStats.playerStats.projectileDamage;
     public float projectileForce;
-    public float cooldownDuration;
+    // public float cooldownDuration;
 
     private bool isFiring = false;
     private float lastFireTime;
@@ -25,7 +25,7 @@ public class TestSpell : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && Time.time >= lastFireTime + cooldownDuration)
+        if (Input.GetMouseButtonDown(1) && Time.time >= lastFireTime + PlayerStats.playerStats.projectileCoolDown)
         {
             // isFiring = true;
             StartCoroutine(FireProjectiles());
@@ -35,28 +35,6 @@ public class TestSpell : MonoBehaviour
         //     isFiring = false;
         // }
     }
-
-    // private void Update()
-    // {
-    //     if (Input.GetMouseButtonDown(1) && Time.time >= playerStats.lastFireTime + playerStats.cooldownDuration)
-    //     {
-    //         isFiring = true;
-    //         StartCoroutine(FireProjectiles());
-    //     }
-    //     else if (Input.GetMouseButtonUp(0))
-    //     {
-    //         isFiring = false;
-    //     }
-
-    //     // Update the cooldown UI
-    //     if (cooldownImage != null)
-    //     {
-    //         float cooldownTimeRemaining = Mathf.Clamp(playerStats.lastFireTime + playerStats.cooldownDuration - Time.time, 0f, playerStats.cooldownDuration);
-    //         float fillAmount = cooldownTimeRemaining / playerStats.cooldownDuration;
-    //         cooldownImage.fillAmount = fillAmount;
-    //     }
-    // }
-
 
     IEnumerator FireProjectiles()
     {
@@ -70,9 +48,9 @@ public class TestSpell : MonoBehaviour
             // Random damage
             //spell.GetComponent<TestProjectile>().damage = damage;
             lastFireTime = Time.time; // Update the last fire time
-            PlayerStats.playerStats.isCooldown = true;
-            PlayerStats.playerStats.cooldownImage();
-            yield return new WaitForSeconds(cooldownDuration);
+            PlayerStats.playerStats.isProjectileCooldown = true;
+            PlayerStats.playerStats.projectileCoolDownImage();
+            yield return new WaitForSeconds(PlayerStats.playerStats.projectileCoolDown);
         }
 }
 

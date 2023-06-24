@@ -10,6 +10,7 @@ public class ImpactAttackScript : MonoBehaviour
 
     public void InitializeDespawn()
     {
+        // PlayerStats.playerStats.impactAttackCoolDownImage();
         StartCoroutine(PlayImpactAnimationAndDespawn());
     }
 
@@ -19,6 +20,7 @@ public class ImpactAttackScript : MonoBehaviour
         {
             animator.SetTrigger("Impact");
         }
+        //PlayerStats.playerStats.impactAttackCoolDownImage();
         yield return new WaitForSeconds(despawnDelay);
         Destroy(gameObject);
     }
