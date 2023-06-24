@@ -6,6 +6,6 @@ public class IncreaseAuraDmgUpgrade : Upgrade
 {
     public void upgrade()
     {
-        PlayerStats.playerStats.auraBuffDamage += 5F;
+        PlayerStats.playerStats.auraBuffDamage += 4F;
     }
 }
