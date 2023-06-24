@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
+    public Image image;
+    public float cooldown1 = 1;
+    public bool isCooldown = false;
 
 ////////////////////////////////////////////////////////////
     public static PlayerStats playerStats;
@@ -94,7 +97,7 @@ public class PlayerStats : MonoBehaviour
             playerStats = this;
         }
         DontDestroyOnLoad(this);
-        
+
         maxHealth = 150;
         health = maxHealth;
         projectileDamage = 1000;
