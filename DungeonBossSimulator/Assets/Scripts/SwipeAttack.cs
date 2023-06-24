@@ -9,7 +9,6 @@ public class SwipeAttack : MonoBehaviour
     private SpriteRenderer spriteR;
     private SpriteRenderer selfSprite;
 
-    public float cooldownDuration = 1f; // The duration of the cooldown in seconds
     private float lastAttackTime; // The time when the last attack occurred
 
     void Start()
@@ -23,7 +22,7 @@ public class SwipeAttack : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (Time.time - lastAttackTime >= cooldownDuration)
+            if (Time.time - lastAttackTime >= PlayerStats.playerStats.swipeAttackCoolDown)
             {
                 TriggerSwipeAttack();
                 lastAttackTime = Time.time; // Update the last attack time
@@ -49,6 +48,10 @@ public class SwipeAttack : MonoBehaviour
 
             // Set the flipX property of the swipe attack's sprite based on the flip status of the player model
             swipeSprite.flipX = !isFlipped;
+
+            PlayerStats.playerStats.isSwipeAttackCooldown = true;
+
+            PlayerStats.playerStats.swipeAttackCoolDownImage();
 
             // Add the SwipeAttackScript component and initialize despawning
             SwipeAttackScript attackScript = swipe.AddComponent<SwipeAttackScript>();

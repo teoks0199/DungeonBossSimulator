@@ -141,7 +141,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 3281874612376729195, guid: 251c03a55c37e574da49db65f4e6a8ee, type: 3}
   projectileForce: 2
-  cooldownDuration: 1
 --- !u!50 &628195766
 Rigidbody2D:
   serializedVersion: 4
@@ -260,7 +259,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2743130650215018110}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78de3ba39de98024498d44741918687c, type: 3}
   m_Name: 
@@ -273,13 +272,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2743130650215018110}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffabf0ccbb1c7ea41ab9b5cb245eefb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   swipeAttack: {fileID: 4121093914838680993, guid: af8b5232bcdec724294ac348ebc2505d, type: 3}
-  cooldownDuration: 0.4
 --- !u!114 &6874632168860107543
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,18 +6,35 @@ public class ImpactAttack : MonoBehaviour
 {
     public GameObject impactAttack;
     private GameObject playerModel;
+    private bool isCooldown = false; // Flag to track if the attack is on cooldown
+    private float cooldownTimer = 0f; // Timer to measure the cooldown duration
 
     void Start()
     {
         playerModel = PlayerStats.playerStats.playerModel;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (!isCooldown && Input.GetKeyDown("space"))
         {
             TriggerImpactAttack();
+        }
+
+        UpdateCooldown();
+    }
+
+    void UpdateCooldown()
+    {
+        if (isCooldown)
+        {
+            cooldownTimer += Time.deltaTime;
+
+            if (cooldownTimer >= PlayerStats.playerStats.impactAttackCoolDown)
+            {
+                isCooldown = false;
+                cooldownTimer = 0f;
+            }
         }
     }
 
@@ -25,13 +42,14 @@ public class ImpactAttack : MonoBehaviour
     {
         if (impactAttack != null)
         {
-            // Instantiate the impact attack at the desired position relative to the player
+            isCooldown = true;
+
             GameObject impact = Instantiate(impactAttack, playerModel.transform.position + new Vector3(0, -0.2f, 0), Quaternion.identity);
-            // Optionally, you can parent the impact attack to the player for better organization
             impact.transform.SetParent(playerModel.transform);
-            // Add a script to the impact attack object to handle despawning after the attack occurs
             ImpactAttackScript attackScript = impact.AddComponent<ImpactAttackScript>();
-            attackScript.InitializeDespawn(); // Call a method to initialize the despawn process
+            PlayerStats.playerStats.isImpactCooldown = true;
+            PlayerStats.playerStats.impactAttackCoolDownImage();
+            attackScript.InitializeDespawn();
         }
     }
 }
