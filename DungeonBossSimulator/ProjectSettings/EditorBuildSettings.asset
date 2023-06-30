@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level 05.unity
     guid: b1667e846c4fd424ba71195c8ec57a79
+  - enabled: 1
+    path: Assets/Movement&AttackTestScene.unity
+    guid: d5560fd7a04517041a94d6edcdd1566f
   m_configObjects: {}

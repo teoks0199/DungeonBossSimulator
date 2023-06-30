@@ -119,7 +119,7 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Level 01")
+        if ((SceneManager.GetActiveScene().name == "Level 01") || (SceneManager.GetActiveScene().name.EndsWith("TestScene")))
         {
             playerModel = Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
             healthCanvas = Instantiate(hpCanvas);

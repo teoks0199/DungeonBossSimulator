@@ -21,7 +21,7 @@ public class StateManager : MonoBehaviour
                 Destroy(PlayerStats.playerStats);
                 
             }
-            //PlayerStats.playerStats.player.SetActive(true);
+            
             SceneManager.LoadScene(name);
         }
     }
