@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 6d259ac431558c4428b9b27ee3f799fb
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - DPComic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f1d75c5ac4eba8642b2041e04aab3d24, type: 3}
+  - {fileID: 12800000, guid: d48b16d15dec5cf4f93344355343c578, type: 3}
+  - {fileID: 12800000, guid: 3bfd65431a716ee4598681cd581038c6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
