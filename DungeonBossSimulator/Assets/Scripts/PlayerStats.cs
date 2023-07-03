@@ -125,9 +125,9 @@ public class PlayerStats : MonoBehaviour
             healthCanvas = Instantiate(hpCanvas);
             DontDestroyOnLoad(healthCanvas);
             healthText = healthCanvas.GetComponentInChildren<TMP_Text>();
-            projectileAttackImage = healthCanvas.GetComponentsInChildren<Image>()[2];
-            swipeAttackImage = healthCanvas.GetComponentsInChildren<Image>()[1];
-            impactAttackImage = healthCanvas.GetComponentsInChildren<Image>()[3];
+            projectileAttackImage = healthCanvas.GetComponentsInChildren<Image>()[4];
+            swipeAttackImage = healthCanvas.GetComponentsInChildren<Image>()[3];
+            impactAttackImage = healthCanvas.GetComponentsInChildren<Image>()[5];
             healthSlider = healthCanvas.GetComponentInChildren<Slider>();
         }
 
