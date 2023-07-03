@@ -12,11 +12,41 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject deathPanel;
     [SerializeField] GameObject nextLevelPanel;
     [SerializeField] GameObject upgradePanel;
+
+    public GameObject pauseScreen;
     public Button Upgrade1;
     public Button Upgrade2;
     public Button Upgrade3;
     //Dictionary<string, Upgrade> upgradePool = PlayerStats.playerStats.upgradePool;
     public static (string, Upgrade)[] upgradeChoices;
+
+    public static bool isGamePaused = false;
+
+        void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) // or any other input method for pausing
+        {
+            TogglePause();
+        }
+    }
+
+        public void TogglePause()
+    {
+        isGamePaused = !isGamePaused;
+
+        if (isGamePaused)
+        {
+            Time.timeScale = 0f; // Pause the game
+            //pauseScreen.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1f; // Resume the game
+            // Hide the pause menu canvas
+            //pauseScreen.SetActive(false);
+        }
+    }
+    
     
 
     public void ToggleDeathPanel() 
