@@ -34,23 +34,31 @@ public class SwipeAttack : MonoBehaviour
     {
         if (swipeAttack != null)
         {
-            bool isFlipped = spriteR.flipX;
+            // Get the mouse position in world space
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0; // Make sure the z-coordinate is 0 for 2D games
 
-            // Calculate the position offset based on the flip status
-            Vector3 positionOffset = isFlipped ? new Vector3(0.2f, -0.12f, 0) : new Vector3(-0.2f, -0.12f, 0);
+            // Calculate the direction from the player model to the mouse position
+            Vector3 direction = mousePosition - playerModel.transform.position;
+            direction.Normalize(); // Normalize the direction vector to have a magnitude of 1
 
-            // Instantiate the swipe attack at the desired position relative to the player
-            GameObject swipe = Instantiate(swipeAttack, playerModel.transform.position + positionOffset, Quaternion.identity);
+            // Define the desired length of the direction vector
+            float desiredLength = 0.3f;
+
+            // Multiply the direction vector by the desired length
+            direction *= desiredLength;
+
+            // Instantiate the swipe attack at the player's position and add the direction to its position
+            GameObject swipe = Instantiate(swipeAttack, playerModel.transform.position + direction, Quaternion.identity);
             swipe.transform.SetParent(playerModel.transform);
 
             // Get the SpriteRenderer component of the swipe attack
             SpriteRenderer swipeSprite = swipe.GetComponent<SpriteRenderer>();
 
             // Set the flipX property of the swipe attack's sprite based on the flip status of the player model
-            swipeSprite.flipX = !isFlipped;
+            swipeSprite.flipX = !spriteR.flipX;
 
             PlayerStats.playerStats.isSwipeAttackCooldown = true;
-
             PlayerStats.playerStats.swipeAttackCoolDownImage();
 
             // Add the SwipeAttackScript component and initialize despawning
@@ -58,4 +66,7 @@ public class SwipeAttack : MonoBehaviour
             attackScript.InitializeDespawn();
         }
     }
+
+
+
 }
