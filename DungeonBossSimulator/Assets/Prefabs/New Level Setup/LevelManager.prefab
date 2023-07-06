@@ -63,6 +63,8 @@ MonoBehaviour:
   deathPanel: {fileID: 0}
   nextLevelPanel: {fileID: 0}
   upgradePanel: {fileID: 0}
+  pausePanel: {fileID: 0}
+  pauseScreen: {fileID: 0}
   Upgrade1: {fileID: 0}
   Upgrade2: {fileID: 0}
   Upgrade3: {fileID: 0}

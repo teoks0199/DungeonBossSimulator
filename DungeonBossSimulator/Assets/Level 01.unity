@@ -191,11 +191,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &33541185 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7210683774338101114, guid: 88fa5817b3ad33744b23d35e750cd978, type: 3}
-  m_PrefabInstance: {fileID: 7210683772969598991}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &223744940 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7210683772890567587, guid: 88fa5817b3ad33744b23d35e750cd978, type: 3}
@@ -19059,10 +19054,6 @@ PrefabInstance:
       propertyPath: nextLevelPanel
       value: 
       objectReference: {fileID: 223744940}
-    - target: {fileID: 1465869359859529860, guid: fd2f05276adc37f46870fddcef40bba4, type: 3}
-      propertyPath: enemyCount
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1465869359859529861, guid: fd2f05276adc37f46870fddcef40bba4, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -19162,58 +19153,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5290529473309567898, guid: 788966e820856324fb44386f96064533, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
-      propertyPath: hpText
-      value: 
-      objectReference: {fileID: 749794855907358611, guid: 5831a5346eea05f40809131417a7950f, type: 3}
-    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2743130650215018110, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
-    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
-      propertyPath: HealthUI
-      value: 
-      objectReference: {fileID: 33541185}
-    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
-      propertyPath: hpCanvas
-      value: 
-      objectReference: {fileID: 2435922209159605027, guid: 2d7571c8b90d65b4fb80e63847ec7f63, type: 3}
-    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
-      propertyPath: hpSlider
-      value: 
-      objectReference: {fileID: 8534768296041762227, guid: 027164a1331655348ae06b3818f22239, type: 3}
-    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
-      propertyPath: maxHealth
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
-      propertyPath: healthText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
-      propertyPath: impactAttack
-      value: 
-      objectReference: {fileID: 7926163667032392743, guid: ab3af1755ac0231459570939abdeede2, type: 3}
-    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
-      propertyPath: projectileDamage
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
-      propertyPath: projectileCoolDown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
-      propertyPath: swipeAttackCoolDown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
-      propertyPath: impactAttackCoolDown
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
