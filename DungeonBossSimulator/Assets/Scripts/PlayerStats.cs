@@ -98,7 +98,7 @@ public class PlayerStats : MonoBehaviour
         }
         DontDestroyOnLoad(this);
 
-        maxHealth = 150;
+        maxHealth = 10;
         health = maxHealth;
         projectileDamage = 15;
         swipeDamage = 5;
@@ -121,17 +121,20 @@ public class PlayerStats : MonoBehaviour
     {
         if ((SceneManager.GetActiveScene().name == "Level 01") || (SceneManager.GetActiveScene().name.EndsWith("TestScene")))
         {
-            playerModel = Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
-            healthCanvas = Instantiate(hpCanvas);
-            DontDestroyOnLoad(healthCanvas);
-            healthText = healthCanvas.GetComponentInChildren<TMP_Text>();
-            projectileAttackImage = healthCanvas.GetComponentsInChildren<Image>()[4];
-            swipeAttackImage = healthCanvas.GetComponentsInChildren<Image>()[3];
-            impactAttackImage = healthCanvas.GetComponentsInChildren<Image>()[5];
-            healthSlider = healthCanvas.GetComponentInChildren<Slider>();
+            if (healthCanvas == null) {
+                playerModel = Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
+                healthCanvas = Instantiate(hpCanvas);
+                DontDestroyOnLoad(healthCanvas);
+                healthText = healthCanvas.GetComponentInChildren<TMP_Text>();
+                projectileAttackImage = healthCanvas.GetComponentsInChildren<Image>()[4];
+                swipeAttackImage = healthCanvas.GetComponentsInChildren<Image>()[3];
+                impactAttackImage = healthCanvas.GetComponentsInChildren<Image>()[5];
+                healthSlider = healthCanvas.GetComponentInChildren<Slider>();
+                SetHealthUI();
+                    }
         }
 
-        SetHealthUI();
+        //SetHealthUI();
     }
 
     public void DealDamage(float damage)
@@ -198,10 +201,17 @@ public class PlayerStats : MonoBehaviour
     private void CheckDeath()
     {
         Debug.Log(health);
-        if (health <= 0)
-        {
-            PlayerDied();
-        }
+     if (health <= 0)
+     {
+         try
+         {
+             PlayerDied();
+         }
+         catch (System.Exception ex)
+         {
+             Debug.LogError("Exception occurred while handling player death: " + ex.Message);
+         }
+     }
     }
 
     private void PlayerDied()
@@ -210,6 +220,7 @@ public class PlayerStats : MonoBehaviour
         playerStats = new PlayerStats();
         Destroy(temp.playerModel);
         Destroy(temp);
+        Destroy(healthCanvas);
         LevelManager.instance.GameOver();
     }
 
