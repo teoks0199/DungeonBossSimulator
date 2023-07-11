@@ -40,7 +40,7 @@ public class TestEnemyShooting : MonoBehaviour
                 animator.SetBool("Attack", true);
                 yield return new WaitForSeconds(0.45f);
                 GameObject spell = Instantiate(projectile, transform.position, Quaternion.identity);
-                Debug.Log(player.transform.position);
+                //Debug.Log(player.transform.position);
                 Vector2 myPos = transform.position;
                 Vector2 targetPos = player.transform.position;
                 Vector2 direction = (targetPos - myPos).normalized;
