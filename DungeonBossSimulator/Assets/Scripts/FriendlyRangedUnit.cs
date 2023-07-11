@@ -20,8 +20,9 @@ public class FriendlyRangedUnit : MonoBehaviour
 
     void Update()
     {
-        FindNearestEnemy();
 
+        animator.SetBool("Attack", false);
+        FindNearestEnemy();
         if (enemy != null)
         {
             Vector2 direction = (enemy.transform.position - transform.position).normalized;
@@ -58,16 +59,14 @@ public class FriendlyRangedUnit : MonoBehaviour
             }
 
             projectileInstance.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
-            projectileInstance.GetComponent<TestEnemyProjectile>().damage = damage;
+            projectileInstance.GetComponent<TestEnemyProjectile>().damage = damage; 
 
             
         }
 
         yield return null; // Optional delay between shots
         StartCoroutine(ShootEnemy());
-        
-        
-        
+           
     }
 
     void FindNearestEnemy()
