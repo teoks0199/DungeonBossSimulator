@@ -67,7 +67,9 @@ public class EnemyMeleeAttack : MonoBehaviour
             {
                 //PlayerMovement.animator.SetTrigger("Hit");
                 //PlayerStats.playerStats.DealDamage(damage); 
-                collision.GetComponent<MinionReceiveDamage>().DealDamage(damage);                   
+                collision.GetComponent<MinionReceiveDamage>().DealDamage(damage);      
+                Vector2 difference = transform.position - collision.transform.position;
+                rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);             
             }
             
         }
