@@ -19159,6 +19159,10 @@ PrefabInstance:
       propertyPath: meleeMinion
       value: 
       objectReference: {fileID: 4194180641941881800, guid: 9ffa83502fe586c4c9ee69b7185abab3, type: 3}
+    - target: {fileID: 5290529473309567899, guid: 788966e820856324fb44386f96064533, type: 3}
+      propertyPath: rangedMinion
+      value: 
+      objectReference: {fileID: 6055571648096985245, guid: 5e9cde604f73ed24586c5a89af695629, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 788966e820856324fb44386f96064533, type: 3}
 --- !u!1001 &5777584767089335418

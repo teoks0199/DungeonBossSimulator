@@ -226,10 +226,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangedMinion
       objectReference: {fileID: 0}
-    - target: {fileID: 6055571648096985245, guid: 5e9cde604f73ed24586c5a89af695629, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9cde604f73ed24586c5a89af695629, type: 3}
 --- !u!1 &81019169
@@ -839,14 +835,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5615273342297468139, guid: 9ffa83502fe586c4c9ee69b7185abab3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7943522113273870772, guid: 9ffa83502fe586c4c9ee69b7185abab3, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7943522113273870772, guid: 9ffa83502fe586c4c9ee69b7185abab3, type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

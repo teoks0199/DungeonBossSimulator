@@ -10,6 +10,7 @@ public class FriendlyRangedUnit : MonoBehaviour
     public float projectileForce;
     private SpriteRenderer _renderer;
     private Animator animator;
+    public float speed = 0.1F;
 
     public void Start()
     {
@@ -23,8 +24,10 @@ public class FriendlyRangedUnit : MonoBehaviour
 
         animator.SetBool("Attack", false);
         FindNearestEnemy();
+        
         if (enemy != null)
         {
+            transform.position = Vector2.MoveTowards(transform.position, enemy.transform.position, speed * Time.deltaTime);
             Vector2 direction = (enemy.transform.position - transform.position).normalized;
             if (direction.x > 0)
             {
@@ -39,32 +42,35 @@ public class FriendlyRangedUnit : MonoBehaviour
 
     IEnumerator ShootEnemy()
     {
-        while (true)
+        //Debug.Log("shooting");
+        yield return new WaitForSeconds(2);
+     
+
+        if (enemy != null)
         {
-            //yield return null; // Optional initial delay before shooting
+            animator.SetBool("Attack", true);
+            yield return new WaitForSeconds(0.45f);
+            GameObject projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
 
-            if (enemy != null)
+            Vector2 direction = (enemy.transform.position - transform.position).normalized;
+            if (direction.x > 0)
             {
-                animator.SetBool("Attack", true);
-                yield return new WaitForSeconds(0.45f);
-                GameObject projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
-
-                Vector2 direction = (enemy.transform.position - transform.position).normalized;
-                if (direction.x > 0)
-                {
-                    _renderer.flipX = false;
-                }
-                else if (direction.x < 0)
-                {
-                    _renderer.flipX = true;
-                }
-
-                projectileInstance.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
-                projectileInstance.GetComponent<TestEnemyProjectile>().damage = damage; 
+                _renderer.flipX = false;
+            }
+            else if (direction.x < 0)
+            {
+                _renderer.flipX = true;
             }
 
-            //yield return null;
+            projectileInstance.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
+            //projectileInstance.GetComponent<TestProjectile>().damage = damage; 
+            //Debug.Log("shooting2");
+            StartCoroutine(ShootEnemy());
         }
+        //Debug.Log("shooting3");
+
+        //yield return null;
+        
     }
 
     void FindNearestEnemy()

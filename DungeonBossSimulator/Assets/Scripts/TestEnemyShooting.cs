@@ -44,16 +44,16 @@ public class TestEnemyShooting : MonoBehaviour
                 Vector2 myPos = transform.position;
                 Vector2 targetPos = player.transform.position;
                 Vector2 direction = (targetPos - myPos).normalized;
-           if (direction.x > 0) {
-                _renderer.flipX = false; }
-           else if (direction.x < 0) {
-                _renderer.flipX = true; 
-            }
+                if (direction.x > 0) {
+                        _renderer.flipX = false; }
+                else if (direction.x < 0) {
+                        _renderer.flipX = true; 
+                    }
 
-            spell.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
-            spell.GetComponent<TestEnemyProjectile>().damage = Random.Range(minDamage, maxDamage);
-            // animator.SetBool("Attack", true);
-            StartCoroutine(ShootPlayer());
+                spell.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
+                spell.GetComponent<TestEnemyProjectile>().damage = Random.Range(minDamage, maxDamage);
+                // animator.SetBool("Attack", true);
+                StartCoroutine(ShootPlayer());
             }
     }
 }

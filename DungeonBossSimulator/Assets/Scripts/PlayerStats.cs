@@ -18,7 +18,7 @@ public class PlayerStats : MonoBehaviour
 
     public GameObject meleeMinion;
 
-
+    public GameObject rangedMinion;
 
 ////////// Health UI ///////////////////////////////////////
     public Canvas hpCanvas;
@@ -118,6 +118,7 @@ public class PlayerStats : MonoBehaviour
         upgradePool.Add("Unlock Impact Attack [Spacebar]", new UnlockImpactAttackUpgrade());
         upgradePool.Add("Unlock Aura Buff", new UnlockAuraBuffUpgrade());
         upgradePool.Add("Summon Melee Minion", new SummonMeleeMinionUpgrade());
+        upgradePool.Add("Summon Ranged Minion", new SummonRangedMinionUpgrade());
     }
 
     void Start()
@@ -203,7 +204,7 @@ public class PlayerStats : MonoBehaviour
 
     private void CheckDeath()
     {
-        Debug.Log(health);
+        //Debug.Log(health);
      if (health <= 0)
      {
          try
