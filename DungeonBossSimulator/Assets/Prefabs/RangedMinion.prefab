@@ -113,7 +113,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.84, y: 0.5}
-  m_SizeDelta: {x: 800, y: 100}
+  m_SizeDelta: {x: 519.5, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &382752977
 MonoBehaviour:
@@ -231,7 +231,7 @@ RectTransform:
   m_GameObject: {fileID: 1256416722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 382752976}
@@ -240,8 +240,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.74, y: 0.1}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: -0.501, y: -0.262}
+  m_SizeDelta: {x: 1875, y: 1057}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1256416726
 Canvas:
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.0047169924, b: 0.0047169924, a: 1}
+  m_Color: {r: 0, g: 0.9245283, b: 0.08995136, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -412,7 +412,7 @@ RectTransform:
   m_GameObject: {fileID: 6055571648096985245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1256416723}
@@ -437,18 +437,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.04185854, y: -0.022829413}
+  m_Offset: {x: -0.0053829253, y: -0.26737344}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.57, y: 0.86}
-    newSize: {x: 0.14, y: 0.21}
+    oldSize: {x: 1.6, y: 1.28}
+    newSize: {x: 1.6, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.28210694, y: 0.8107501}
+  m_Size: {x: 0.24320221, y: 0.4661653}
   m_EdgeRadius: 0
 --- !u!95 &6055571648096985233
 Animator:
@@ -460,7 +460,7 @@ Animator:
   m_GameObject: {fileID: 6055571648096985245}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 95629227361cf55499d11ec93b7d0613, type: 2}
+  m_Controller: {fileID: 9100000, guid: 92b7f435978e5ce40877de5f3ff7050f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -512,12 +512,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 190124578, guid: 428221e62c3cdcf48a9837adf85fddd3, type: 3}
+  m_Sprite: {fileID: -787912858, guid: 0617376069dcd2e48a201ae2f02858f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.14, y: 0.21}
+  m_Size: {x: 1.6, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4198a0a2decfa40a817ff7d6470792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 3281874612376729195, guid: 251c03a55c37e574da49db65f4e6a8ee, type: 3}
+  projectile: {fileID: 3281874612376729195, guid: 157917e5492e55843bc7584ef37a50ca, type: 3}
   enemy: {fileID: 0}
   damage: 10
   projectileForce: 2

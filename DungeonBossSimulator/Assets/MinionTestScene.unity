@@ -130,14 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1901943521, guid: 5e9cde604f73ed24586c5a89af695629, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1901943521, guid: 5e9cde604f73ed24586c5a89af695629, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2580696848874803134, guid: 5e9cde604f73ed24586c5a89af695629, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -204,11 +196,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2580696848874803134, guid: 5e9cde604f73ed24586c5a89af695629, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.627
+      value: 0.535
       objectReference: {fileID: 0}
     - target: {fileID: 2580696848874803134, guid: 5e9cde604f73ed24586c5a89af695629, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.456
+      value: -0.202
       objectReference: {fileID: 0}
     - target: {fileID: 2580696848874803134, guid: 5e9cde604f73ed24586c5a89af695629, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -751,6 +743,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4194180641941881800, guid: 9ffa83502fe586c4c9ee69b7185abab3, type: 3}
       propertyPath: m_Name
+      value: Minion
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194180641941881800, guid: 9ffa83502fe586c4c9ee69b7185abab3, type: 3}
+      propertyPath: m_TagString
       value: Minion
       objectReference: {fileID: 0}
     - target: {fileID: 5615273342297468139, guid: 9ffa83502fe586c4c9ee69b7185abab3, type: 3}

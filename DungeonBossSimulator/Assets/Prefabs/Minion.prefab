@@ -216,9 +216,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  speed: 0.3
+  speed: 0.6
   knockbackForce: 1
-  damage: 3
+  damage: 10
 --- !u!114 &913116647
 MonoBehaviour:
   m_ObjectHideFlags: 0
