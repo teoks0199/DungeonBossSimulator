@@ -753,10 +753,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minion
       objectReference: {fileID: 0}
-    - target: {fileID: 4194180641941881800, guid: 9ffa83502fe586c4c9ee69b7185abab3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5615273342297468139, guid: 9ffa83502fe586c4c9ee69b7185abab3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
