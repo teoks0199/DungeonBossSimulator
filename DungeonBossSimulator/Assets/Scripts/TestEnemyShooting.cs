@@ -47,11 +47,13 @@ public class TestEnemyShooting : MonoBehaviour
            if (direction.x > 0) {
                 _renderer.flipX = false; }
            else if (direction.x < 0) {
-                _renderer.flipX = true; }
-                spell.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
-                spell.GetComponent<TestEnemyProjectile>().damage = Random.Range(minDamage, maxDamage);
-                // animator.SetBool("Attack", true);
-                StartCoroutine(ShootPlayer());
+                _renderer.flipX = true; 
+            }
+
+            spell.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
+            spell.GetComponent<TestEnemyProjectile>().damage = Random.Range(minDamage, maxDamage);
+            // animator.SetBool("Attack", true);
+            StartCoroutine(ShootPlayer());
             }
     }
 }

@@ -39,34 +39,32 @@ public class FriendlyRangedUnit : MonoBehaviour
 
     IEnumerator ShootEnemy()
     {
-        yield return null; // Optional initial delay before shooting
-
-       
-        if (enemy != null)
+        while (true)
         {
-            animator.SetBool("Attack", true);
-            yield return new WaitForSeconds(0.45f);
-            GameObject projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
+            //yield return null; // Optional initial delay before shooting
 
-            Vector2 direction = (enemy.transform.position - transform.position).normalized;
-            if (direction.x > 0)
+            if (enemy != null)
             {
-                _renderer.flipX = false;
-            }
-            else if (direction.x < 0)
-            {
-                _renderer.flipX = true;
+                animator.SetBool("Attack", true);
+                yield return new WaitForSeconds(0.45f);
+                GameObject projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
+
+                Vector2 direction = (enemy.transform.position - transform.position).normalized;
+                if (direction.x > 0)
+                {
+                    _renderer.flipX = false;
+                }
+                else if (direction.x < 0)
+                {
+                    _renderer.flipX = true;
+                }
+
+                projectileInstance.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
+                projectileInstance.GetComponent<TestEnemyProjectile>().damage = damage; 
             }
 
-            projectileInstance.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
-            projectileInstance.GetComponent<TestEnemyProjectile>().damage = damage; 
-
-            
+            //yield return null;
         }
-
-        yield return null; // Optional delay between shots
-        StartCoroutine(ShootEnemy());
-           
     }
 
     void FindNearestEnemy()
