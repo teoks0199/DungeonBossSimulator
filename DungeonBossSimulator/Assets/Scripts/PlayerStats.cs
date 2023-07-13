@@ -16,7 +16,9 @@ public class PlayerStats : MonoBehaviour
 
     public GameObject player;
 
+    public GameObject meleeMinion;
 
+    public GameObject rangedMinion;
 
 ////////// Health UI ///////////////////////////////////////
     public Canvas hpCanvas;
@@ -115,6 +117,8 @@ public class PlayerStats : MonoBehaviour
         upgradePool.Add("Heal 100HP", new HealUpgrade());
         upgradePool.Add("Unlock Impact Attack [Spacebar]", new UnlockImpactAttackUpgrade());
         upgradePool.Add("Unlock Aura Buff", new UnlockAuraBuffUpgrade());
+        upgradePool.Add("Summon Melee Minion", new SummonMeleeMinionUpgrade());
+        upgradePool.Add("Summon Ranged Minion", new SummonRangedMinionUpgrade());
     }
 
     void Start()
@@ -200,7 +204,7 @@ public class PlayerStats : MonoBehaviour
 
     private void CheckDeath()
     {
-        Debug.Log(health);
+        //Debug.Log(health);
      if (health <= 0)
      {
          try
@@ -221,7 +225,18 @@ public class PlayerStats : MonoBehaviour
         Destroy(temp.playerModel);
         Destroy(temp);
         Destroy(healthCanvas);
+        DestroyGameObjectsWithTag("Minion");
         LevelManager.instance.GameOver();
+    }
+
+    public void DestroyGameObjectsWithTag(string tag)
+    {
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(tag);
+
+        for (int i = 0; i < gameObjects.Length; i++)
+        {
+            Destroy(gameObjects[i]);
+        }
     }
 
     float CalculateHealthPercentage()

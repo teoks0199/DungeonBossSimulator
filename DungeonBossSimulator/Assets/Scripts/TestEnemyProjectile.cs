@@ -15,6 +15,12 @@ public class TestEnemyProjectile : MonoBehaviour
                 PlayerMovement.animator.SetTrigger("Hit");
                 PlayerStats.playerStats.DealDamage(damage);                    
             }
+            if(collision.tag == "Minion")
+            {
+                //PlayerMovement.animator.SetTrigger("Hit");
+                //PlayerStats.playerStats.DealDamage(damage); 
+                collision.GetComponent<MinionReceiveDamage>().DealDamage(damage);                   
+            }
             if (collision.tag != "Loot" && collision.tag != "Aura")
             {
                 Destroy(gameObject);

@@ -16,6 +16,7 @@ public class StateManager : MonoBehaviour
         {
             if (name == "MainMenu") 
             {
+                PlayerStats.playerStats.DestroyGameObjectsWithTag("Minion");
                 Destroy(PlayerStats.playerStats.playerModel);
                 Destroy(PlayerStats.playerStats.healthCanvas);
                 Destroy(PlayerStats.playerStats);

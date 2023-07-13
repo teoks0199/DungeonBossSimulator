@@ -8,8 +8,7 @@ public class EnemyMeleeAttack : MonoBehaviour
     public GameObject projectile;
     public float speed;
     private float distance;
-    public float minDamage;
-    public float maxDamage;
+    public float damage = 3;
     public float projectileForce;
     public float cooldown;
     public bool isDead = false;
@@ -52,10 +51,27 @@ public class EnemyMeleeAttack : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerMovement.animator.SetTrigger("Hit");
-            PlayerStats.playerStats.DealDamage(Random.Range(minDamage, maxDamage));
+            PlayerStats.playerStats.DealDamage(damage);
 
             Vector2 difference = transform.position - collision.transform.position;
             rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);
+        }
+        
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag != "Enemy")
+        {
+            
+            if(collision.tag == "Minion")
+            {
+                //PlayerMovement.animator.SetTrigger("Hit");
+                //PlayerStats.playerStats.DealDamage(damage); 
+                collision.GetComponent<MinionReceiveDamage>().DealDamage(damage);      
+                Vector2 difference = transform.position - collision.transform.position;
+                rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);             
+            }
+            
         }
     }
 }
