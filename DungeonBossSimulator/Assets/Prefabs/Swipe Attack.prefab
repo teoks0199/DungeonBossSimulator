@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 629503003224755629}
   m_Layer: 0
   m_Name: Swipe Attack
-  m_TagString: Untagged
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a2e2ccb53f99e4e9dcb6e7077c6c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
   animator: {fileID: 0}
 --- !u!58 &629503003224755629
 CircleCollider2D:
