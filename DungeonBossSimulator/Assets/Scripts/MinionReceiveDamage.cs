@@ -58,9 +58,8 @@ public class MinionReceiveDamage : MonoBehaviour
         animator.SetBool("Dead", true);
         yield return new WaitForSeconds(1.0f); // Adjust the delay time as needed
         //Destroy(gameObject);
-        
         Instantiate(lootDrop, transform.position, Quaternion.identity);
-        animator.SetBool("Run", true);
+        //animator.SetBool("Run", true);
         gameObject.SetActive(false);
 
     }

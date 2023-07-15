@@ -113,11 +113,11 @@ public class PlayerStats : MonoBehaviour
         swipeAttackCoolDown = 0.3f;
         impactAttackCoolDown = 2f;
 
-        upgradePool.Add("Increase Max Health", new IncreaseHealthUpgrade());
+        /*upgradePool.Add("Increase Max Health", new IncreaseHealthUpgrade());
         upgradePool.Add("Increase Projectile Damage", new ProjectileDamageUpgrade());
         upgradePool.Add("Increase Swipe Damage", new SwipeDamageUpgrade());
         upgradePool.Add("Heal 100HP", new HealUpgrade());
-        upgradePool.Add("Unlock Impact Attack [Spacebar]", new UnlockImpactAttackUpgrade()); 
+        upgradePool.Add("Unlock Impact Attack [Spacebar]", new UnlockImpactAttackUpgrade()); */
         upgradePool.Add("Unlock Aura Buff", new UnlockAuraBuffUpgrade());
         upgradePool.Add("Summon Melee Minion", new SummonMeleeMinionUpgrade());
         upgradePool.Add("Summon Ranged Minion", new SummonRangedMinionUpgrade());
