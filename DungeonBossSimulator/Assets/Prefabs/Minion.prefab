@@ -177,14 +177,14 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 2
-  m_AngularDrag: 2
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &1729139077907820061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,10 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 118cf8848f37ca24c84e7a330e761bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
   speed: 0.6
   knockbackForce: 1
-  damage: 10
+  damage: 20
 --- !u!114 &913116647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 30
+  maxHealth: 100
   healthBar: {fileID: 7943522114909977498}
   healthBarSlider: {fileID: 7943522114909977476}
   lootDrop: {fileID: 8862175120893293825, guid: 9443372692b56bc4ead6205a72754fcb, type: 3}

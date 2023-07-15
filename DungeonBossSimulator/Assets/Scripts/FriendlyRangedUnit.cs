@@ -43,7 +43,7 @@ public class FriendlyRangedUnit : MonoBehaviour
     IEnumerator ShootEnemy()
     {
         //Debug.Log("shooting");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
      
 
         if (enemy != null)

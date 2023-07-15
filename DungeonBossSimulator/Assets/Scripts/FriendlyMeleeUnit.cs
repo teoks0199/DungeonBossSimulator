@@ -1,44 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FriendlyMeleeUnit : MonoBehaviour
 {
-    public GameObject enemy;
+    private GameObject enemy;
     public float speed;
     private SpriteRenderer _renderer;
     private Rigidbody2D rb;
 
-    // New variable for knockback force
     public float knockbackForce;
     public float damage = 3;
 
-    public void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         _renderer = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    private void Update()
     {
         FindNearestEnemy();
 
         if (enemy != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, enemy.transform.position, speed * Time.deltaTime);
+            Vector2 targetPosition = enemy.transform.position;
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
-            if (transform.position.x < enemy.transform.position.x)
-            {
-                _renderer.flipX = false;
-            }
-            else if (transform.position.x > enemy.transform.position.x)
-            {
-                _renderer.flipX = true;
-            }
+            // Flip sprite based on enemy position
+            _renderer.flipX = transform.position.x < targetPosition.x;
         }
     }
 
-    void FindNearestEnemy()
+    private void FindNearestEnemy()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         float closestDistance = Mathf.Infinity;
@@ -57,20 +49,19 @@ public class FriendlyMeleeUnit : MonoBehaviour
         enemy = closestEnemy;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.CompareTag("Enemy"))
         {
-            //Debug.Log("hitting");
-            // Deal damage to the enemy
-            EnemyReceiveDamage enem = collision.GetComponent<EnemyReceiveDamage>();
-            if (enem != null)
+            EnemyReceiveDamage enemyDamageReceiver = collision.GetComponent<EnemyReceiveDamage>();
+            if (enemyDamageReceiver != null)
             {
-                enem.DealDamage(damage);
+                enemyDamageReceiver.DealDamage(damage);
             }
 
-            Vector2 difference = transform.position - collision.transform.position;
-            rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);
+            Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
+            rb.AddForce(-knockbackDirection * knockbackForce, ForceMode2D.Impulse);
         }
     }
 }
+

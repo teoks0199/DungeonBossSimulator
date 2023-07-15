@@ -100,7 +100,7 @@ public class PlayerStats : MonoBehaviour
         }
         DontDestroyOnLoad(this);
 
-        maxHealth = 100;
+        maxHealth = 150;
         health = maxHealth;
         projectileDamage = 15;
         swipeDamage = 5;
