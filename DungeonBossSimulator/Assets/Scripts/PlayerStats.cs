@@ -20,6 +20,8 @@ public class PlayerStats : MonoBehaviour
 
     public GameObject rangedMinion;
 
+    public List<GameObject> minionsToActivate = new List<GameObject>();
+
 ////////// Health UI ///////////////////////////////////////
     public Canvas hpCanvas;
     public Canvas healthCanvas;
@@ -102,7 +104,7 @@ public class PlayerStats : MonoBehaviour
 
         maxHealth = 150;
         health = maxHealth;
-        projectileDamage = 15;
+        projectileDamage = 150;
         swipeDamage = 5;
         auraBuffDamage = 4F;
         impactAttackDamage = 20;
@@ -115,7 +117,7 @@ public class PlayerStats : MonoBehaviour
         upgradePool.Add("Increase Projectile Damage", new ProjectileDamageUpgrade());
         upgradePool.Add("Increase Swipe Damage", new SwipeDamageUpgrade());
         upgradePool.Add("Heal 100HP", new HealUpgrade());
-        upgradePool.Add("Unlock Impact Attack [Spacebar]", new UnlockImpactAttackUpgrade());
+        upgradePool.Add("Unlock Impact Attack [Spacebar]", new UnlockImpactAttackUpgrade()); 
         upgradePool.Add("Unlock Aura Buff", new UnlockAuraBuffUpgrade());
         upgradePool.Add("Summon Melee Minion", new SummonMeleeMinionUpgrade());
         upgradePool.Add("Summon Ranged Minion", new SummonRangedMinionUpgrade());
@@ -236,6 +238,16 @@ public class PlayerStats : MonoBehaviour
         for (int i = 0; i < gameObjects.Length; i++)
         {
             Destroy(gameObjects[i]);
+        }
+    }
+
+    public void respawnMinions()
+    {
+        // Loop through the array and set all minions active.
+        foreach (GameObject minion in minionsToActivate)
+        {
+            minion.GetComponent<MinionReceiveDamage>().HealCharacter(100);
+            minion.SetActive(true);
         }
     }
 

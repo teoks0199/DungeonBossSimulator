@@ -24,6 +24,7 @@ public class StateManager : MonoBehaviour
             }
             
             SceneManager.LoadScene(name);
+            PlayerStats.playerStats.respawnMinions();
         }
     }
 }
