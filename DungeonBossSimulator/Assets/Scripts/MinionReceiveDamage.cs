@@ -11,7 +11,6 @@ public class MinionReceiveDamage : MonoBehaviour
     public Slider healthBarSlider;
     public GameObject lootDrop;
     private Animator animator;
-    public bool isDestroyed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,17 +42,13 @@ public class MinionReceiveDamage : MonoBehaviour
 
     private void CheckDeath()
     {
-        if (health <= 0 && !isDestroyed) {
+        if (health <= 0) {
             StartCoroutine(DestroyWithDelay());
         }
     }
 
     private IEnumerator DestroyWithDelay()
     {
-        //animator.SetBool("Dead", true);
-
-        isDestroyed = true;
-
 
         animator.SetBool("Dead", true);
         yield return new WaitForSeconds(1.0f); // Adjust the delay time as needed

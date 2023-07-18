@@ -56,10 +56,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.007023569, y: -0.38918298}
+  m_Offset: {x: -0.004754573, y: -0.00050497055}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.49882427, y: 0.20238099}
     oldSize: {x: 2.88, y: 1.28}
     newSize: {x: 2.88, y: 1.28}
     adaptiveTilingThreshold: 0.5
@@ -67,7 +67,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13622656, y: 0.34980702}
+  m_Size: {x: 0.254008, y: 0.30269468}
   m_EdgeRadius: 0
 --- !u!95 &4194180641941881796
 Animator:
@@ -157,8 +157,7 @@ MonoBehaviour:
   player: {fileID: 2743130650215018110, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
   projectile: {fileID: 0}
   speed: 0.3
-  minDamage: 3
-  maxDamage: 3
+  damage: 3
   projectileForce: 0
   cooldown: 0
   isDead: 0
@@ -315,7 +314,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.74, y: -0.28}
+  m_AnchoredPosition: {x: -0.734, y: 0.108}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7943522114170521219

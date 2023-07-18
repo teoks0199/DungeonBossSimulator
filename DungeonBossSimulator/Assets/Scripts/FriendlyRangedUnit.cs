@@ -12,8 +12,13 @@ public class FriendlyRangedUnit : MonoBehaviour
     private Animator animator;
     public float speed = 0.1F;
 
+    private Rigidbody2D rb;
+
+    public float knockbackForce;
+
     public void Start()
     {
+        FindNearestEnemy();
         StartCoroutine(ShootEnemy());
         _renderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -21,7 +26,6 @@ public class FriendlyRangedUnit : MonoBehaviour
 
     void Update()
     {
-
         animator.SetBool("Attack", false);
         FindNearestEnemy();
         
@@ -44,15 +48,19 @@ public class FriendlyRangedUnit : MonoBehaviour
     {
         Debug.Log("shooting");
         yield return new WaitForSeconds(0.5f);
+        Debug.Log("1");
      
 
-        if (enemy != null)
-        {
+        // if (enemy != null)
+        // {
             animator.SetBool("Attack", true);
+            Debug.Log("2");
             yield return new WaitForSeconds(0.45f);
+            Debug.Log("3");
             GameObject projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
-
+            Debug.Log("4");
             Vector2 direction = (enemy.transform.position - transform.position).normalized;
+            Debug.Log("5");
             if (direction.x > 0)
             {
                 _renderer.flipX = false;
@@ -61,17 +69,47 @@ public class FriendlyRangedUnit : MonoBehaviour
             {
                 _renderer.flipX = true;
             }
+            Debug.Log("6");
 
             projectileInstance.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
-            //projectileInstance.GetComponent<TestProjectile>().damage = damage; 
-            //Debug.Log("shooting2");
-            StartCoroutine(ShootEnemy());
-        }
-        //Debug.Log("shooting3");
-
-        //yield return null;
+            Debug.Log("7"); 
+        //
+        StartCoroutine(ShootEnemy());
         
     }
+
+
+//     IEnumerator ShootEnemy()
+// {
+//     while (true)
+//     {
+//         yield return new WaitForSeconds(1f);
+
+//         if (enemy != null)
+//         {
+//             animator.SetBool("Attack", true);
+//             yield return new WaitForSeconds(1f);
+
+//             GameObject projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
+
+//             Vector2 direction = (enemy.transform.position - transform.position).normalized;
+
+//             if (direction.x > 0)
+//             {
+//                 _renderer.flipX = false;
+//             }
+//             else if (direction.x < 0)
+//             {
+//                 _renderer.flipX = true;
+//             }
+
+//             projectileInstance.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
+//         }
+
+//         yield return null;
+//     }
+// }
+
 
     void FindNearestEnemy()
     {
@@ -91,4 +129,22 @@ public class FriendlyRangedUnit : MonoBehaviour
 
         enemy = closestEnemy;
     }
+
+
+        void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if(collision.gameObject.CompareTag("Enemy"))
+        { 
+            // EnemyReceiveDamage enemyDamageReceiver = collision.gameObject.GetComponent<EnemyReceiveDamage>();
+            // enemyDamageReceiver.DealDamage(damage);
+            Vector2 difference = transform.position - collision.transform.position;
+            Debug.Log("Test");
+            rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);                       
+        }
+      
+    }
+
+
 }
+

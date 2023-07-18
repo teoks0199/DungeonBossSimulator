@@ -52,60 +52,33 @@ public class EnemyMeleeAttack : MonoBehaviour
         {
             PlayerMovement.animator.SetTrigger("Hit");
             PlayerStats.playerStats.DealDamage(damage);
-
             Vector2 difference = transform.position - collision.transform.position;
-            rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);
+            rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);          
         }
         
+        // if(collision.gameObject.CompareTag("Minion"))
+        // { 
+        //     collision.gameObject.GetComponent<MinionReceiveDamage>().DealDamage(damage);   
+        //     Vector2 difference = transform.position - collision.transform.position;
+        //     rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);                       
+        // }   
     }
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag != "Enemy")
-        {
+
+
+
+    // void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if (collision.tag != "Enemy")
+    //     {
+    //         if(collision.tag == "Minion")
+    //         {
+    //             //PlayerMovement.animator.SetTrigger("Hit");
+    //             //PlayerStats.playerStats.DealDamage(damage); 
+    //             collision.GetComponent<MinionReceiveDamage>().DealDamage(damage);      
+    //             Vector2 difference = transform.position - collision.transform.position;
+    //             rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);             
+    //         }
             
-            if(collision.tag == "Minion")
-            {
-                //PlayerMovement.animator.SetTrigger("Hit");
-                //PlayerStats.playerStats.DealDamage(damage); 
-                collision.GetComponent<MinionReceiveDamage>().DealDamage(damage);      
-                Vector2 difference = transform.position - collision.transform.position;
-                rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);             
-            }
-            
-        }
-    }
+    //     }
+    // }
 }
-
-
-
-    /*public IEnumerator Knockback()
-    {
-        float knockbackDuration = 0.01f;
-        //float knockbackPower = 0.0005f;
-        //float knockbackPower = 0.4f;
-        Transform obj = PlayerStats.playerStats.player.transform;
-        Vector2 difference = transform.position - obj.transform.position;
-        float timer = 0;
-
-        while (knockbackDuration > timer)
-        {
-            timer += Time.deltaTime;
-            transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
-        }
-        yield return 0;
-    }*/
-
-    /*IEnumerator ShootPlayer() {
-            yield return new WaitForSeconds(cooldown);
-            if (player!=null) {
-                GameObject spell = Instantiate(projectile, transform.position, Quaternion.identity);
-                Debug.Log(player.transform.position);
-                Vector2 myPos = transform.position;
-                Vector2 targetPos = player.transform.position;
-                Vector2 direction = (targetPos - myPos).normalized;
-                spell.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
-                spell.GetComponent<TestEnemyProjectile>().damage = Random.Range(minDamage, maxDamage);
-                StartCoroutine(ShootPlayer());
-            }
-    }*/
-

@@ -54,6 +54,8 @@ public class PlayerStats : MonoBehaviour
     public float health;
     public float maxHealth;
     public float projectileDamage;
+
+    public float rangedMinionDamage;
     public float swipeDamage;
     public float auraBuffDamage;
     public float impactAttackDamage;
@@ -105,6 +107,7 @@ public class PlayerStats : MonoBehaviour
         maxHealth = 150;
         health = maxHealth;
         projectileDamage = 150;
+        rangedMinionDamage = 10;
         swipeDamage = 5;
         auraBuffDamage = 4F;
         impactAttackDamage = 20;
