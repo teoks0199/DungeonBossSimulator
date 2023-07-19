@@ -18,10 +18,10 @@ public class FriendlyRangedUnit : MonoBehaviour
 
     public void Start()
     {
-        FindNearestEnemy();
-        StartCoroutine(ShootEnemy());
         _renderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        FindNearestEnemy();
+        StartCoroutine(ShootEnemy());
     }
 
     void Update()
@@ -47,16 +47,19 @@ public class FriendlyRangedUnit : MonoBehaviour
     IEnumerator ShootEnemy()
     {
         Debug.Log("shooting");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         Debug.Log("1");
+        
      
 
-        // if (enemy != null)
-        // {
-            animator.SetBool("Attack", true);
+        if (enemy != null)
+        {
+            //animator.SetBool("Attack", true);
             Debug.Log("2");
-            yield return new WaitForSeconds(0.45f);
+            yield return new WaitForSeconds(1f);
             Debug.Log("3");
+            animator.SetBool("Attack", true);
+            yield return new WaitForSeconds(0.2f);
             GameObject projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
             Debug.Log("4");
             Vector2 direction = (enemy.transform.position - transform.position).normalized;
@@ -70,11 +73,14 @@ public class FriendlyRangedUnit : MonoBehaviour
                 _renderer.flipX = true;
             }
             Debug.Log("6");
-
+            //yield return new WaitForSeconds(0.1f);
             projectileInstance.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
             Debug.Log("7"); 
+            
+            StartCoroutine(ShootEnemy());
+        }
         //
-        StartCoroutine(ShootEnemy());
+        //StartCoroutine(ShootEnemy());
         
     }
 

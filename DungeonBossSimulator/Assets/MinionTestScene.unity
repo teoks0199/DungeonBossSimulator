@@ -130,18 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -612675349799199146, guid: 5e9cde604f73ed24586c5a89af695629, type: 3}
-      propertyPath: damage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1901943521, guid: 5e9cde604f73ed24586c5a89af695629, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1901943521, guid: 5e9cde604f73ed24586c5a89af695629, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2580696848874803134, guid: 5e9cde604f73ed24586c5a89af695629, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
