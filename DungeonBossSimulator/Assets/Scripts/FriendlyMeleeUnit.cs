@@ -8,7 +8,7 @@ public class FriendlyMeleeUnit : MonoBehaviour
     private Rigidbody2D rb;
 
     public float knockbackForce;
-    public float damage = 3;
+    private float damage;
 
     private void Start()
     {
@@ -18,6 +18,7 @@ public class FriendlyMeleeUnit : MonoBehaviour
 
     private void Update()
     {
+        damage = PlayerStats.playerStats.meleeMinionDamage;
         FindNearestEnemy();
 
         if (enemy != null)

@@ -56,12 +56,12 @@ public class EnemyMeleeAttack : MonoBehaviour
             rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);          
         }
         
-        // if(collision.gameObject.CompareTag("Minion"))
-        // { 
-        //     collision.gameObject.GetComponent<MinionReceiveDamage>().DealDamage(damage);   
-        //     Vector2 difference = transform.position - collision.transform.position;
-        //     rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);                       
-        // }   
+        if(collision.gameObject.CompareTag("Minion"))
+        { 
+            collision.gameObject.GetComponent<MinionReceiveDamage>().DealDamage(damage);   
+            //Vector2 difference = transform.position - collision.transform.position;
+            //rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);                       
+        }   
     }
 
 

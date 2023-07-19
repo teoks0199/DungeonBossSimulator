@@ -16565,11 +16565,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 491517918, guid: 4d63e1c4cf2e95e42ba7e5718c7de970, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 491517918, guid: 4d63e1c4cf2e95e42ba7e5718c7de970, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 420803842397749142, guid: 4d63e1c4cf2e95e42ba7e5718c7de970, type: 3}
       propertyPath: m_RootOrder
@@ -16618,6 +16618,10 @@ PrefabInstance:
     - target: {fileID: 8234049826826132555, guid: 4d63e1c4cf2e95e42ba7e5718c7de970, type: 3}
       propertyPath: m_Name
       value: BossHero (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234049826826132555, guid: 4d63e1c4cf2e95e42ba7e5718c7de970, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d63e1c4cf2e95e42ba7e5718c7de970, type: 3}

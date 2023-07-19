@@ -11,10 +11,12 @@ public class SummonMeleeMinionUpgrade : Upgrade
     public void upgrade()
     {
         minion = GameObject.Instantiate(PlayerStats.playerStats.meleeMinion, new Vector3(0, 0, 0), Quaternion.identity);
-        //minion2 = GameObject.Instantiate(PlayerStats.playerStats.meleeMinion, new Vector3(1, 1, 1), Quaternion.identity);
         GameObject.DontDestroyOnLoad(minion);
         PlayerStats.playerStats.minionsToActivate.Add(minion);
-        //GameObject.DontDestroyOnLoad(minion2);
+        if (!PlayerStats.playerStats.upgradePool.ContainsKey("Increase Melee Minion Damage"))
+        {
+            PlayerStats.playerStats.upgradePool.Add("Increase Melee Minion Damage", new IncreaseMeleeMinionDamageUpgrade());
+        }    
     }
 
     

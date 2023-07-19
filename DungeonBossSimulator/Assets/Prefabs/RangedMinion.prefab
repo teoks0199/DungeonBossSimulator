@@ -534,10 +534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4198a0a2decfa40a817ff7d6470792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
   projectilePrefab: {fileID: 3281874612376729195, guid: 157917e5492e55843bc7584ef37a50ca, type: 3}
   fireRate: 2
-  shootingRange: 10
 --- !u!114 &1411749874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,7 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 70
+  maxHealth: 20
   healthBar: {fileID: 382752975}
   healthBarSlider: {fileID: 382752977}
   lootDrop: {fileID: 8862175120893293825, guid: 9443372692b56bc4ead6205a72754fcb, type: 3}
