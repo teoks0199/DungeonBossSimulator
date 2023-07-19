@@ -21,7 +21,7 @@ public class BossProjectile : MonoBehaviour
                 //PlayerStats.playerStats.DealDamage(damage); 
                 collision.GetComponent<MinionReceiveDamage>().DealDamage(damage);                   
             }
-            if (collision.tag != "Loot" && collision.tag != "Aura" && collision.tag != "PlayerAttack")
+            if (collision.tag != "Loot" && collision.tag != "Aura" && collision.tag != "PlayerAttack" && collision.tag != "BossProjectile" )
             {
                 Destroy(gameObject);
             }

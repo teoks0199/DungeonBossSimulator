@@ -534,12 +534,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc3e93c36347c0408dcfd690b974728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 3281874612376729195, guid: 61cf6843ec019be48beb9a23a8ab329a, type: 3}
+  projectilePrefab: {fileID: 3281874612376729195, guid: 61cf6843ec019be48beb9a23a8ab329a, type: 3}
+  fireRate: 0
   player: {fileID: 0}
-  minDamage: 10
-  maxDamage: 10
-  projectileForce: 2
-  cooldown: 2
   isDead: 0
 --- !u!114 &564504714721985694
 MonoBehaviour:

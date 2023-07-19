@@ -6,6 +6,14 @@ public class TestEnemyProjectile : MonoBehaviour
 {
     public float damage;
 
+    public TestEnemyShooting wizard;
+
+    private void Update() {
+        if (wizard.isDead) {
+            Destroy(gameObject);
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag != "Enemy")
@@ -21,7 +29,7 @@ public class TestEnemyProjectile : MonoBehaviour
                 //PlayerStats.playerStats.DealDamage(damage); 
                 collision.GetComponent<MinionReceiveDamage>().DealDamage(damage);                   
             }
-            if (collision.tag != "Loot" && collision.tag != "Aura")
+            if (collision.tag != "Loot" && collision.tag != "Aura" )
             {
                 Destroy(gameObject);
             }

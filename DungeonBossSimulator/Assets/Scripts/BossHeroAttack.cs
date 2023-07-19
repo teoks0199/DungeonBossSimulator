@@ -5,12 +5,14 @@ public class BossHeroAttack : MonoBehaviour
 {
     public GameObject player;
     public GameObject slashPrefab;
+
+    public GameObject Ring;
     public float speed;
     public float damage = 3;
     public float projectileForce;
     public float knockbackForce;
     public float rollDuration = 0.5f;
-    public float rollCooldown = 3f;
+    public float rollCooldown = 0.1f;
     public float rollDistanceThreshold = 3f;
 
     public int numSlashes = 3;
@@ -18,10 +20,9 @@ public class BossHeroAttack : MonoBehaviour
     public float attackCooldown = 3f;
 
     public bool isDead = false;
-    private bool isAttacking = false;
-    private bool isRolling = false;
     private bool canRoll = false;
     private bool canAttack = true;
+    private bool canDash = false;
     private SpriteRenderer _renderer;
     private Rigidbody2D rb;
     private Animator animator;
@@ -51,6 +52,11 @@ public class BossHeroAttack : MonoBehaviour
                 StartCoroutine(Roll());
             }
 
+            if (canDash)
+            {
+                StartCoroutine(DashAttack());
+            }
+
             else
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
@@ -72,26 +78,6 @@ public class BossHeroAttack : MonoBehaviour
             _renderer.flipX = true;
         }
     }
-
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.CompareTag("Player"))
-    //     {
-    //         PlayerMovement.animator.SetTrigger("Hit");
-    //         PlayerStats.playerStats.DealDamage(damage);
-    //     }
-    // }
-
-    // private void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //     if (collision.tag == "Minion")
-    //     {
-    //         collision.GetComponent<MinionReceiveDamage>().DealDamage(damage);
-    //         Vector2 difference = transform.position - collision.transform.position;
-    //         rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);
-    //     }
-    // }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -101,13 +87,6 @@ public class BossHeroAttack : MonoBehaviour
             Vector2 difference = transform.position - collision.transform.position;
             rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);          
         }
-        
-        // if(collision.gameObject.CompareTag("Minion"))
-        // { 
-        //     collision.gameObject.GetComponent<MinionReceiveDamage>().DealDamage(damage);   
-        //     Vector2 difference = transform.position - collision.transform.position;
-        //     rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);                       
-        // }   
     }
 
     private IEnumerator PerformSlashAttack()
@@ -138,20 +117,43 @@ public class BossHeroAttack : MonoBehaviour
         canRoll = true;
     }
 
-    private IEnumerator Roll()
-    {
-        canRoll = false;
-        animator.SetBool("Roll", true);
-        Vector2 rollDirection = (transform.position - player.transform.position).normalized;
-        rb.velocity = rollDirection * speed * 5f;
-        yield return new WaitForSeconds(0.8f);
-        rb.velocity = Vector2.zero;
-        isRolling = false;
-        animator.SetBool("Roll", false);
-        yield return new WaitForSeconds(rollCooldown);
-        canAttack = true;
-    }
+private IEnumerator Roll()
+{
+    canRoll = false;
+    animator.SetBool("Roll", true);
+    Vector2 rollDirection = (transform.position - player.transform.position).normalized;
+    rb.velocity = rollDirection * speed * 5f;
+    yield return new WaitForSeconds(0.8f);
+    rb.velocity = Vector2.zero;
+    animator.SetBool("Roll", false);
+    yield return new WaitForSeconds(rollCooldown);
+    canDash = true;
 }
+
+private IEnumerator DashAttack()
+{
+    canDash = false;
+    //isAttacking = true;
+    //animator.SetBool("DashAttack", true);
+
+    Vector2 dashDirection = (player.transform.position - transform.position).normalized;
+    rb.velocity = dashDirection * speed * 6f; // Adjust the speed of the dash as needed
+
+    yield return new WaitForSeconds(0.8f); // Adjust the duration of the dash attack as needed
+
+    rb.velocity = Vector2.zero;
+    //isAttacking = false;
+    //animator.SetBool("DashAttack", false);
+
+    //yield return new WaitForSeconds(attackCooldown);
+    canAttack = true;
+}
+
+
+
+
+}
+
 
 
 

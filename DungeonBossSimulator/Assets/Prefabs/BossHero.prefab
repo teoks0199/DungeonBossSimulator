@@ -484,8 +484,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2743130650215018110, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
   slashPrefab: {fileID: 4121093914838680993, guid: 6984e71682ed6e04d8df9e1963c85a8e, type: 3}
+  Ring: {fileID: 0}
   speed: 0.3
-  damage: 3
+  damage: 10
   projectileForce: 1
   knockbackForce: 0.5
   rollDuration: 1
@@ -494,6 +495,7 @@ MonoBehaviour:
   numSlashes: 5
   slashDelay: 0.5
   attackCooldown: 3
+  isDead: 0
 --- !u!95 &562150643659977026
 Animator:
   serializedVersion: 5
