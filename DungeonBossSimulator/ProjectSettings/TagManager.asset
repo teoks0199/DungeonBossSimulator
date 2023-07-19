@@ -8,6 +8,9 @@ TagManager:
   - Loot
   - Aura
   - Minion
+  - PlayerAttack
+  - BossProjectile
+  - GameMusic
   layers:
   - Default
   - TransparentFX

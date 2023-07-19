@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 6055571648096985232}
   - component: {fileID: 1653051326889087231}
   - component: {fileID: 564504714721985694}
+  - component: {fileID: 2049133565}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Enemy
@@ -432,10 +433,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.04185854, y: -0.022829413}
+  m_Offset: {x: -0.023530424, y: -0.022829413}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -446,7 +447,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.28210694, y: 0.8107501}
+  m_Size: {x: 0.48421776, y: 0.8107501}
   m_EdgeRadius: 0
 --- !u!95 &6055571648096985233
 Animator:
@@ -533,12 +534,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc3e93c36347c0408dcfd690b974728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 3281874612376729195, guid: 61cf6843ec019be48beb9a23a8ab329a, type: 3}
+  projectilePrefab: {fileID: 3281874612376729195, guid: 61cf6843ec019be48beb9a23a8ab329a, type: 3}
+  fireRate: 0
   player: {fileID: 0}
-  minDamage: 10
-  maxDamage: 10
-  projectileForce: 2
-  cooldown: 2
   isDead: 0
 --- !u!114 &564504714721985694
 MonoBehaviour:
@@ -558,3 +556,24 @@ MonoBehaviour:
   healthBarSlider: {fileID: 382752977}
   lootDrop: {fileID: 8862175120893293825, guid: 9443372692b56bc4ead6205a72754fcb, type: 3}
   isDestroyed: 0
+--- !u!50 &2049133565
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6055571648096985245}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

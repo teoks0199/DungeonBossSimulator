@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 4194180641941881795}
   - component: {fileID: 4194180641941881796}
   - component: {fileID: 4194180641941881797}
-  - component: {fileID: -134313208318108513}
   - component: {fileID: -266611191167421367}
-  - component: {fileID: 1729139077907820061}
   - component: {fileID: 1220308279397945925}
   - component: {fileID: 913116647}
   m_Layer: 0
@@ -55,7 +53,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.03585332, y: -0.040605105}
@@ -144,26 +142,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-134313208318108513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4194180641941881800}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20cb21b65f62ee445ba841a2e617b8db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  projectile: {fileID: 0}
-  speed: 0
-  damage: 3
-  projectileForce: 0
-  cooldown: 0
-  isDead: 0
-  knockbackForce: 0
 --- !u!50 &-266611191167421367
 Rigidbody2D:
   serializedVersion: 4
@@ -176,33 +154,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 2
-  m_AngularDrag: 2
+  m_Mass: 3
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_SleepingMode: 0
+  m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1729139077907820061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4194180641941881800}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf959e3ded903f48a320eae2e5b743b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 50
-  healthBar: {fileID: 7943522114909977498}
-  healthBarSlider: {fileID: 7943522114909977476}
-  lootDrop: {fileID: 8862175120893293825, guid: 9443372692b56bc4ead6205a72754fcb, type: 3}
-  isDestroyed: 0
 --- !u!114 &1220308279397945925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,9 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 118cf8848f37ca24c84e7a330e761bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  speed: 0.6
-  knockbackForce: 1
+  speed: 0.5
+  knockbackForce: 3
   damage: 10
 --- !u!114 &913116647
 MonoBehaviour:
@@ -232,11 +191,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 30
+  maxHealth: 20
   healthBar: {fileID: 7943522114909977498}
   healthBarSlider: {fileID: 7943522114909977476}
   lootDrop: {fileID: 8862175120893293825, guid: 9443372692b56bc4ead6205a72754fcb, type: 3}
-  isDestroyed: 0
 --- !u!1 &7943522113273870773
 GameObject:
   m_ObjectHideFlags: 0

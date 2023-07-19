@@ -48,6 +48,9 @@ MonoBehaviour:
   cooldown1: 1
   isCooldown: 0
   player: {fileID: 2743130650215018110, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
+  meleeMinion: {fileID: 4194180641941881800, guid: 9ffa83502fe586c4c9ee69b7185abab3, type: 3}
+  rangedMinion: {fileID: 6055571648096985245, guid: 5e9cde604f73ed24586c5a89af695629, type: 3}
+  minionsToActivate: []
   hpCanvas: {fileID: 2435922209159605027, guid: 2d7571c8b90d65b4fb80e63847ec7f63, type: 3}
   healthCanvas: {fileID: 0}
   projectileAttackImage: {fileID: 0}
