@@ -76,6 +76,12 @@ public class EnemyReceiveDamage : MonoBehaviour
        {
            priest.isDead = true;
        }
+
+       BossHeroAttack bossHero = GetComponent<BossHeroAttack>();
+        if (bossHero != null)
+       {
+           bossHero.isDead = true;
+       }
 //
         animator.SetBool("Dead", true);
         yield return new WaitForSeconds(1.0f); // Adjust the delay time as needed

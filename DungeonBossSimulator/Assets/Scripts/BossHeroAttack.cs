@@ -17,7 +17,7 @@ public class BossHeroAttack : MonoBehaviour
     public float slashDelay = 0.5f;
     public float attackCooldown = 3f;
 
-    private bool isDead = false;
+    public bool isDead = false;
     private bool isAttacking = false;
     private bool isRolling = false;
     private bool canRoll = false;
@@ -73,23 +73,41 @@ public class BossHeroAttack : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    // private void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.CompareTag("Player"))
+    //     {
+    //         PlayerMovement.animator.SetTrigger("Hit");
+    //         PlayerStats.playerStats.DealDamage(damage);
+    //     }
+    // }
+
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if (collision.tag == "Minion")
+    //     {
+    //         collision.GetComponent<MinionReceiveDamage>().DealDamage(damage);
+    //         Vector2 difference = transform.position - collision.transform.position;
+    //         rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);
+    //     }
+    // }
+
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerMovement.animator.SetTrigger("Hit");
             PlayerStats.playerStats.DealDamage(damage);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Minion")
-        {
-            collision.GetComponent<MinionReceiveDamage>().DealDamage(damage);
             Vector2 difference = transform.position - collision.transform.position;
-            rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);
+            rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);          
         }
+        
+        // if(collision.gameObject.CompareTag("Minion"))
+        // { 
+        //     collision.gameObject.GetComponent<MinionReceiveDamage>().DealDamage(damage);   
+        //     Vector2 difference = transform.position - collision.transform.position;
+        //     rb.AddForce(difference.normalized * knockbackForce, ForceMode2D.Impulse);                       
+        // }   
     }
 
     private IEnumerator PerformSlashAttack()

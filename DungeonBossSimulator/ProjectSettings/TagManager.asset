@@ -10,6 +10,7 @@ TagManager:
   - Minion
   - PlayerAttack
   - BossProjectile
+  - GameMusic
   layers:
   - Default
   - TransparentFX
