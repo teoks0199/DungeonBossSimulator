@@ -43,7 +43,7 @@ public class FriendlyRangedUnit : MonoBehaviour
         }
         if (closestEnemy != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, closestEnemy.transform.position, 0.2F * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, closestEnemy.transform.position, 0.1F * Time.deltaTime);
             Vector2 direction = (closestEnemy.transform.position - transform.position).normalized;
             if (direction.x > 0)
             {
