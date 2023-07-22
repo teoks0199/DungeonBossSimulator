@@ -12,9 +12,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject deathPanel;
     [SerializeField] GameObject nextLevelPanel;
     [SerializeField] GameObject upgradePanel;
-    [SerializeField] GameObject pausePanel;
 
-    public GameObject pauseScreen;
+    //public Canvas hpCanvas;
+    private Canvas pauseScreen;
     public Button Upgrade1;
     public Button Upgrade2;
     public Button Upgrade3;
@@ -23,13 +23,14 @@ public class UIManager : MonoBehaviour
 
     public static bool isGamePaused = false;
 
-//        void Update()
-//    {
-//        if (Input.GetKeyDown(KeyCode.Escape)) // or any other input method for pausing
-//        {
-//            TogglePause();
-//        }
-//    }
+       void Update()
+   {
+    //    if (Input.GetKeyDown(KeyCode.Escape)) // or any other input method for pausing
+    //    {
+    //        TogglePause();
+    //        pauseScreen.enabled = true;
+    //    }
+   }
 
         public void TogglePause()
     {

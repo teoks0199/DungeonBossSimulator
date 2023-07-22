@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 564504714721985694}
   - component: {fileID: 2049133565}
   m_Layer: 0
-  m_Name: Wizard
+  m_Name: Tier 2 Wizard
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -535,7 +535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 3281874612376729195, guid: 61cf6843ec019be48beb9a23a8ab329a, type: 3}
-  fireRate: 0.45
+  fireRate: 0.4
   player: {fileID: 0}
   isDead: 0
 --- !u!114 &564504714721985694
@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 30
+  maxHealth: 40
   healthBar: {fileID: 382752975}
   healthBarSlider: {fileID: 382752977}
   lootDrop: {fileID: 8862175120893293825, guid: 9443372692b56bc4ead6205a72754fcb, type: 3}

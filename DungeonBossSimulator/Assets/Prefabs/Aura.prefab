@@ -120,9 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dc51044b5c14df4eb081bdf0793892a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
   damageInterval: 0.1
-  checkInterval: 0.1
+  checkInterval: 0
   auraRadius: 0.4
 --- !u!70 &1525431335784523987
 CapsuleCollider2D:

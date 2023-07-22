@@ -14,18 +14,24 @@ public class AuraBuffScript : MonoBehaviour
 
     void Start()
     {
-        damageCoroutine = StartCoroutine(ApplyDamageOverTime());
+        StartCoroutine(ApplyDamageOverTime());
         StartCoroutine(CheckEnemiesInRange());
     }
 
-    void OnDisable()
-    {
-        if (damageCoroutine != null)
-        {
-            StopCoroutine(damageCoroutine);
-            damageCoroutine = null;
-        }
-    }
+    // void Update() {
+    //     //StartCoroutine(CheckEnemiesInRange());
+    //     //damage = PlayerStats.playerStats.auraBuffDamage;
+    // }
+
+    // void OnDisable()
+    // {
+    //     if (damageCoroutine != null)
+    //     {
+    //         StopCoroutine(damageCoroutine);
+    //         damageCoroutine = null;
+    //         Debug.Log("disabled");
+    //     }
+    // }
 
     IEnumerator ApplyDamageOverTime()
     {
@@ -33,11 +39,13 @@ public class AuraBuffScript : MonoBehaviour
         {
             foreach (EnemyReceiveDamage enemy in enemiesInRange)
             {
-                enemy.DealDamage(damage);
+                enemy.DealDamage(PlayerStats.playerStats.auraBuffDamage);
+                Debug.Log(PlayerStats.playerStats.auraBuffDamage);
             }
             yield return new WaitForSeconds(damageInterval);
         }
     }
+
 
     IEnumerator CheckEnemiesInRange()
     {
@@ -51,10 +59,10 @@ public class AuraBuffScript : MonoBehaviour
                 if (collider.CompareTag("Enemy"))
                 {
                     EnemyReceiveDamage enemy = collider.GetComponent<EnemyReceiveDamage>();
-                    if (enemy != null)
-                    {
-                        enemiesInRange.Add(enemy);
-                    }
+                    //if (enemy != null)
+                    //{
+                    enemiesInRange.Add(enemy);
+                    //}
                 }
             }
 
@@ -68,4 +76,8 @@ public class AuraBuffScript : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, auraRadius);
     }
 }
+
+
+
+
 

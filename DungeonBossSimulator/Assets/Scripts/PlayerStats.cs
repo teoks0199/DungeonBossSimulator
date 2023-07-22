@@ -24,6 +24,7 @@ public class PlayerStats : MonoBehaviour
 
 ////////// Health UI ///////////////////////////////////////
     public Canvas hpCanvas;
+    
     public Canvas healthCanvas;
     private TMP_Text healthText;
     private Slider healthSlider;
@@ -106,7 +107,7 @@ public class PlayerStats : MonoBehaviour
 
         maxHealth = 150;
         health = maxHealth;
-        projectileDamage = 150;
+        projectileDamage = 10;
         meleeMinionDamage = 10;
         rangedMinionDamage = 10;
         swipeDamage = 5;

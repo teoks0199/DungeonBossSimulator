@@ -73,7 +73,7 @@ public class TestEnemyShooting : MonoBehaviour
 
     public void Start()
     {
-        fireRate = 0.45f; 
+        //fireRate = 0.45f; 
         _renderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         player = PlayerStats.playerStats.playerModel;

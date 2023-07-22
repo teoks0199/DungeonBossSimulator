@@ -44,7 +44,6 @@ public class EnemyPriest : MonoBehaviour
     private void HealAllEnemiesWithinRange()
 {
     Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, healRange, enemyLayerMask);
-    Debug.Log("Number of colliders detected: " + colliders.Length);
     animator.SetBool("Heal", true);
 
     foreach (Collider2D collider in colliders)

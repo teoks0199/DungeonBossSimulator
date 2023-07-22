@@ -24,7 +24,6 @@ public class CurrencyPickup : MonoBehaviour
             }*/
 
             PlayerStats.playerStats.coins += pickupQuantity;
-            Debug.Log(PlayerStats.playerStats.coins);
             Destroy(gameObject);
         }
     }

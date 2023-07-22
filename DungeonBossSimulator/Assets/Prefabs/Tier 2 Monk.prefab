@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 4194180641941881795}
   - component: {fileID: 4194180641941881796}
   - component: {fileID: 4194180641941881797}
+  - component: {fileID: -134313208318108513}
   - component: {fileID: -266611191167421367}
-  - component: {fileID: 1220308279397945925}
-  - component: {fileID: 913116647}
+  - component: {fileID: 1729139077907820061}
   m_Layer: 0
-  m_Name: Minion
-  m_TagString: Minion
+  m_Name: Tier 2 Monk
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,18 +56,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03585332, y: -0.040605105}
+  m_Offset: {x: -0.004754573, y: -0.00050497055}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.22, y: 0.32}
+    pivot: {x: 0.49882427, y: 0.20238099}
+    oldSize: {x: 2.88, y: 1.28}
     newSize: {x: 2.88, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17291896, y: 0.30263108}
+  m_Size: {x: 0.254008, y: 0.30269468}
   m_EdgeRadius: 0
 --- !u!95 &4194180641941881796
 Animator:
@@ -79,7 +79,7 @@ Animator:
   m_GameObject: {fileID: 4194180641941881800}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e6827d776d1500542ac0cd42b7219467, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1dca9b83b2532ff4a9b510bce4184d7b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -131,7 +131,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1065073052, guid: a6bfd3eb34d9bf0478d245df2d0f7cb8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1725cdfc92c775743a0ce9dcbcde23fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -142,6 +142,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-134313208318108513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4194180641941881800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20cb21b65f62ee445ba841a2e617b8db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2743130650215018110, guid: 34738351e4616c846bd14e7ab94c73c4, type: 3}
+  projectile: {fileID: 0}
+  speed: 0.5
+  damage: 5
+  projectileForce: 0
+  cooldown: 0
+  isDead: 0
+  knockbackForce: 1
 --- !u!50 &-266611191167421367
 Rigidbody2D:
   serializedVersion: 4
@@ -154,16 +174,16 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
-  m_LinearDrag: 1
-  m_AngularDrag: 1
+  m_Mass: 1
+  m_LinearDrag: 2
+  m_AngularDrag: 2
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1220308279397945925
+--- !u!114 &1729139077907820061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,28 +192,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4194180641941881800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 118cf8848f37ca24c84e7a330e761bbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.55
-  knockbackForce: 3
---- !u!114 &913116647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4194180641941881800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 839170c81c71d44439a0e00c3b5c4383, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bf959e3ded903f48a320eae2e5b743b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 35
+  maxHealth: 60
   healthBar: {fileID: 7943522114909977498}
   healthBarSlider: {fileID: 7943522114909977476}
   lootDrop: {fileID: 8862175120893293825, guid: 9443372692b56bc4ead6205a72754fcb, type: 3}
+  isDestroyed: 0
 --- !u!1 &7943522113273870773
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.041554213, a: 1}
+  m_Color: {r: 1, g: 0.0047169924, b: 0.0047169924, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -307,7 +314,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.612, y: 0.026}
+  m_AnchoredPosition: {x: -0.734, y: 0.108}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7943522114170521219
@@ -443,7 +450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -40, y: -16}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7943522114891346523
@@ -520,8 +527,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.724, y: 0.21}
-  m_SizeDelta: {x: 250, y: 50}
+  m_AnchoredPosition: {x: 0.81, y: 0.2}
+  m_SizeDelta: {x: 450, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7943522114909977476
 MonoBehaviour:
