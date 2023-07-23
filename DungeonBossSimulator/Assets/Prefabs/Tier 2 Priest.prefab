@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 60
+  maxHealth: 120
   healthBar: {fileID: 624740393572968449}
   healthBarSlider: {fileID: 624740393572968479}
   lootDrop: {fileID: 8862175120893293825, guid: 9443372692b56bc4ead6205a72754fcb, type: 3}

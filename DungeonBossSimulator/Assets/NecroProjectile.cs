@@ -9,13 +9,13 @@ public class NecroProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "Player" && collision.tag != "Minion")
+        if (collision.tag != "Player" && collision.tag != "Minion" && collision.tag != "PlayerAttack")
         {
             if (collision.GetComponent<EnemyReceiveDamage>() != null) 
             {
                 collision.GetComponent<EnemyReceiveDamage>().DealDamage(PlayerStats.playerStats.rangedMinionDamage);
             }
-            if (collision.tag != "Loot" && collision.tag != "Aura")
+            if (collision.tag != "Loot" && collision.tag != "Aura" )
             {
                 Destroy(gameObject);
             }
