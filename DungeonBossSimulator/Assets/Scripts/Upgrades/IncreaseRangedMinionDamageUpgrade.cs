@@ -7,5 +7,6 @@ public class IncreaseRangedMinionDamageUpgrade : Upgrade
     public void upgrade()
     {
         PlayerStats.playerStats.rangedMinionDamage += 5;
+        PlayerStats.playerStats.rangedMinionProjSpeed += 0.25F;
     }
 }

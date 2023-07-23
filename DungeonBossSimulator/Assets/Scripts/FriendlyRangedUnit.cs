@@ -6,6 +6,7 @@ public class FriendlyRangedUnit : MonoBehaviour
     //public Transform firePoint;        // The position from where the projectile will be fired
     public GameObject projectilePrefab; // The prefab of the projectile to be fired
     public float fireRate;        // The rate at which the AI unit fires projectiles (in shots per second)
+    //public float projSpeed;
     //public float shootingRange = 10f;  // The maximum distance at which the AI unit can shoot enemies
 
     private float timeSinceLastShot = 0f;
@@ -95,7 +96,7 @@ public class FriendlyRangedUnit : MonoBehaviour
             _renderer.flipX = true;
         }
 
-        newProjectile.GetComponent<Rigidbody2D>().velocity = direction * 1F;
+        newProjectile.GetComponent<Rigidbody2D>().velocity = direction * PlayerStats.playerStats.rangedMinionProjSpeed;
 
         // Destroy the projectile after a few seconds if it hasn't hit anything
         //Destroy(newProjectile, 5f);

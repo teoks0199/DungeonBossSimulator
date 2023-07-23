@@ -33,6 +33,13 @@ public class MinionReceiveDamage : MonoBehaviour
         healthBarSlider.value = CalculateHealthPercentage();
     }
 
+    public void IncreaseMaxHealth(float heal) {
+        maxHealth += heal;
+        health += heal;
+        //CheckOverheal();
+        healthBarSlider.value = CalculateHealthPercentage();
+    }
+
     private void CheckOverheal() 
     {
         if (health > maxHealth) {

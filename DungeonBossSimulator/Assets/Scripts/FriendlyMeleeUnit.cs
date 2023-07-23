@@ -19,6 +19,7 @@ public class FriendlyMeleeUnit : MonoBehaviour
     private void Update()
     {
         damage = PlayerStats.playerStats.meleeMinionDamage;
+        //speed = PlayerStats.playerStats.meleeMinionSpeed;
         FindNearestEnemy();
 
         if (enemy != null)

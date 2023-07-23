@@ -56,7 +56,9 @@ public class PlayerStats : MonoBehaviour
     public float maxHealth;
     public float projectileDamage;
     public float meleeMinionDamage;
+    public float meleeMinionSpeed;
     public float rangedMinionDamage;
+    public float rangedMinionProjSpeed;
     public float swipeDamage;
     public float auraBuffDamage;
     public float impactAttackDamage;
@@ -109,7 +111,9 @@ public class PlayerStats : MonoBehaviour
         health = maxHealth;
         projectileDamage = 10;
         meleeMinionDamage = 10;
+        meleeMinionSpeed = 0.5F;
         rangedMinionDamage = 10;
+        rangedMinionProjSpeed = 1F;
         swipeDamage = 5;
         auraBuffDamage = 4F;
         impactAttackDamage = 20;
@@ -251,7 +255,7 @@ public class PlayerStats : MonoBehaviour
         // Loop through the array and set all minions active.
         foreach (GameObject minion in minionsToActivate)
         {
-            minion.GetComponent<MinionReceiveDamage>().HealCharacter(100);
+            minion.GetComponent<MinionReceiveDamage>().HealCharacter(1000);
             minion.SetActive(true);
         }
     }
