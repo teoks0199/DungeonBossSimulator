@@ -60,7 +60,7 @@ To download our game, click on "Download our game!" above. Once unzipped, click 
 ## Contact
 ![Gmail][Gmail-shield]  [![LinkedIn][linkedin-shield]][linkedin-url]
  <br />
- xxx
+ teokaisheng3@gmail.com
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
