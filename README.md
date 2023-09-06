@@ -15,7 +15,7 @@
     ·
     <a href= https://drive.google.com/file/d/1i0FRo90DiDIx4l728VzAhJP6x3vmLDX2/view?usp=sharing >Download our Game!</a>
     ·
-    <a href= https://credentials.nus.edu.sg/0e1e60fb-c4c4-4242-b4b6-8448ce5fc1f9 >Achievements! </a>
+    <a href= https://credentials.nus.edu.sg/d56bcf7a-87c4-4095-856a-c00f6bbf60bc >Achievements! </a>
   </p>
 </div>
 
@@ -74,7 +74,7 @@ Orbital Partner Keith Teo
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
-[linkedin-url]: https://www.linkedin.com/in/keith-teo-395f/
+[linkedin-url]: https://www.linkedin.com/in/teo-kai-sheng-648944270
 [gmail-shield]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
 [forks-url]: https://github.com/github_username/repo_name/network/members
@@ -85,7 +85,7 @@ Orbital Partner Keith Teo
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
 [license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/keith-teo-395f/
+[linkedin-url]: www.linkedin.com/in/teo-kai-sheng-648944270
 [product-screenshot]: images/screenshot.png
 [Unity.js]: https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white
 [Unity-url]: https://www.unity.com
