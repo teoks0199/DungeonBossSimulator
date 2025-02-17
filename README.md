@@ -13,7 +13,7 @@
     <br />
     <a href= https://drive.google.com/file/d/1VKDLB0IoNW_nVTbYRPzEfEYGARtZg2Yt/view?usp=sharing >Video Demo</a>
     ·
-    <a href= https://drive.google.com/file/d/1i0FRo90DiDIx4l728VzAhJP6x3vmLDX2/view?usp=sharing >Download our Game!</a>
+    <a href= https://github.com/teoks0199/DungeonBossSimulator/releases/tag/v1.0 >Download our Game!</a>
     ·
     <a href= https://credentials.nus.edu.sg/d56bcf7a-87c4-4095-856a-c00f6bbf60bc >Achievements! </a>
   </p>
@@ -50,7 +50,7 @@ Rogue-like games have captivated players with their challenging gameplay, proced
 <!-- GETTING STARTED -->
 ### Installation
 
-To download our game, click on "Download our game!" above. Once unzipped, click on the unity application to start running the game. Do enable permissions in order for our game to run. Thank you & enjoy!
+To download our game, click on "Download our game!" above and download the zip file. Once unzipped, click on the unity application to start running the game. Do enable permissions in order for our game to run. Thank you & enjoy!
 
 *Note: Windows only, Mac users can watch a video demo of our game instead! Video can be found in the "Video Demo" link above. Enjoy!
 
